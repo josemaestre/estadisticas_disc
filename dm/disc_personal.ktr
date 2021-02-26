@@ -587,7 +587,7 @@
     <server>${SC_HOST}</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>eva_new_ori</database>
+    <database>evaluacenter</database>
     <port>3306</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
@@ -967,7 +967,7 @@ SQL = SQL + sqlString;</jsScript_script>
     <schema>disc</schema>
     <table>disc_personal</table>
     <commit>1000</commit>
-    <truncate>Y</truncate>
+    <truncate>N</truncate>
     <ignore_errors>Y</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
@@ -1087,7 +1087,7 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>880</xloc>
+      <xloc>848</xloc>
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
