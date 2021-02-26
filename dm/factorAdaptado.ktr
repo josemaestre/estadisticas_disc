@@ -592,7 +592,7 @@
     <server>${SC_HOST}</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>evaluacenter</database>
+    <database>eva_new_ori</database>
     <port>3306</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
@@ -701,11 +701,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Get Variables</from>
-      <to>Table input</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Write to log</from>
       <to>Update Factor Adaptado</to>
       <enabled>Y</enabled>
@@ -738,6 +733,21 @@
     <hop>
       <from>Select values</from>
       <to>Filter rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get Variables</from>
+      <to>Write to log 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Write to log 2</from>
+      <to>Table input</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get rows from result</from>
+      <to>Get Variables</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -775,8 +785,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>600</xloc>
-      <yloc>276</yloc>
+      <xloc>960</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -860,8 +870,8 @@ for(var i=0,len=arreglo .length;i&lt;len;i++){
       </output>
     </remotesteps>
     <GUI>
-      <xloc>924</xloc>
-      <yloc>264</yloc>
+      <xloc>1280</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -901,8 +911,8 @@ for(var i=0,len=arreglo .length;i&lt;len;i++){
       </output>
     </remotesteps>
     <GUI>
-      <xloc>132</xloc>
-      <yloc>168</yloc>
+      <xloc>480</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -955,8 +965,8 @@ for(var i=0,len=arreglo .length;i&lt;len;i++){
       </output>
     </remotesteps>
     <GUI>
-      <xloc>252</xloc>
-      <yloc>168</yloc>
+      <xloc>608</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1021,8 +1031,8 @@ for(var i=0,len=arreglo .length;i&lt;len;i++){
       </output>
     </remotesteps>
     <GUI>
-      <xloc>684</xloc>
-      <yloc>156</yloc>
+      <xloc>1040</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1065,8 +1075,8 @@ for(var i=0,len=arreglo .length;i&lt;len;i++){
       </output>
     </remotesteps>
     <GUI>
-      <xloc>396</xloc>
-      <yloc>168</yloc>
+      <xloc>752</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1104,8 +1114,8 @@ SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'C' AS letter, ${evalu
       </output>
     </remotesteps>
     <GUI>
-      <xloc>396</xloc>
-      <yloc>24</yloc>
+      <xloc>752</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1133,6 +1143,18 @@ SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'C' AS letter, ${evalu
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
+      <field>
+        <name>tabla</name>
+        <variable>${tabla}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -1143,8 +1165,8 @@ SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'C' AS letter, ${evalu
       </output>
     </remotesteps>
     <GUI>
-      <xloc>60</xloc>
-      <yloc>36</yloc>
+      <xloc>208</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1192,8 +1214,8 @@ SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'C' AS letter, ${evalu
       </output>
     </remotesteps>
     <GUI>
-      <xloc>528</xloc>
-      <yloc>168</yloc>
+      <xloc>896</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1281,8 +1303,8 @@ SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'C' AS letter, ${evalu
       </output>
     </remotesteps>
     <GUI>
-      <xloc>840</xloc>
-      <yloc>156</yloc>
+      <xloc>1200</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1324,8 +1346,8 @@ SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'C' AS letter, ${evalu
       </output>
     </remotesteps>
     <GUI>
-      <xloc>324</xloc>
-      <yloc>276</yloc>
+      <xloc>688</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1361,8 +1383,8 @@ SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'C' AS letter, ${evalu
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
-      <yloc>276</yloc>
+      <xloc>1136</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1474,8 +1496,8 @@ SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'C' AS letter, ${evalu
       </output>
     </remotesteps>
     <GUI>
-      <xloc>396</xloc>
-      <yloc>108</yloc>
+      <xloc>752</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1516,8 +1538,8 @@ SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'C' AS letter, ${evalu
       </output>
     </remotesteps>
     <GUI>
-      <xloc>456</xloc>
-      <yloc>276</yloc>
+      <xloc>816</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1591,8 +1613,8 @@ SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'C' AS letter, ${evalu
       </output>
     </remotesteps>
     <GUI>
-      <xloc>180</xloc>
-      <yloc>276</yloc>
+      <xloc>544</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1627,8 +1649,8 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
       </output>
     </remotesteps>
     <GUI>
-      <xloc>60</xloc>
-      <yloc>276</yloc>
+      <xloc>416</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1651,7 +1673,7 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
     <ignore_flag_field/>
     <lookup>
       <schema/>
-      <table>disc</table>
+      <table>${tabla}</table>
       <key>
         <name>id</name>
         <field>id</field>
@@ -1688,8 +1710,8 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1092</xloc>
-      <yloc>264</yloc>
+      <xloc>1360</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1720,8 +1742,86 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
       </output>
     </remotesteps>
     <GUI>
-      <xloc>996</xloc>
-      <yloc>144</yloc>
+      <xloc>1360</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Write to log 2</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <loglevel>log_level_detailed</loglevel>
+    <displayHeader>Y</displayHeader>
+    <limitRows>N</limitRows>
+    <limitRowsNumber>0</limitRowsNumber>
+    <logmessage>-------------Actualizando la Tabla: ${tabla}
+</logmessage>
+    <fields>
+      <field>
+        <name>tabla</name>
+      </field>
+      <field>
+        <name>evaluacion</name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>304</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Get rows from result</name>
+    <type>RowsFromResult</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>table</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>evaluacion</name>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>208</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

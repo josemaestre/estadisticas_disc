@@ -16,6 +16,11 @@
       <default_value/>
       <description/>
     </parameter>
+    <parameter>
+      <name>tabla</name>
+      <default_value/>
+      <description/>
+    </parameter>
   </parameters>
   <slaveservers>
     </slaveservers>
@@ -310,8 +315,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>120</xloc>
-      <yloc>72</yloc>
+      <xloc>256</xloc>
+      <yloc>176</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -349,12 +354,17 @@
           <stream_name/>
           <value/>
         </parameter>
+        <parameter>
+          <name>tabla</name>
+          <stream_name/>
+          <value/>
+        </parameter>
       </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>372</xloc>
-      <yloc>72</yloc>
+      <xloc>656</xloc>
+      <yloc>176</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -365,8 +375,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>492</xloc>
-      <yloc>72</yloc>
+      <xloc>848</xloc>
+      <yloc>176</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -380,8 +390,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>240</xloc>
-      <yloc>72</yloc>
+      <xloc>464</xloc>
+      <yloc>176</yloc>
       <attributes_kjc/>
     </entry>
   </entries>

@@ -455,11 +455,15 @@
     <index_tablespace/>
     <attributes>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.rewriteBatchedStatements</code>
-        <attribute>true</attribute>
+        <code>EXTRA_OPTION_MYSQL.UseStreamingResults</code>
+        <attribute>false</attribute>
       </attribute>
       <attribute>
         <code>EXTRA_OPTION_MYSQL.useCompression</code>
+        <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
         <attribute>true</attribute>
       </attribute>
       <attribute>
@@ -513,7 +517,7 @@
     <server>${SC_HOST}</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>evaluacenter</database>
+    <database>eva_new_ori</database>
     <port>3306</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
@@ -522,11 +526,11 @@
     <index_tablespace/>
     <attributes>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.rewriteBatchedStatements</code>
+        <code>EXTRA_OPTION_MYSQL.useCompression</code>
         <attribute>true</attribute>
       </attribute>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.useCompression</code>
+        <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
         <attribute>true</attribute>
       </attribute>
       <attribute>
@@ -668,8 +672,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>120</yloc>
+      <xloc>368</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -744,8 +748,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
-      <yloc>16</yloc>
+      <xloc>848</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -788,8 +792,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>444</xloc>
-      <yloc>120</yloc>
+      <xloc>512</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -840,8 +844,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>156</xloc>
-      <yloc>120</yloc>
+      <xloc>224</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1012,8 +1016,8 @@ else if (len_year >= 11) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>360</xloc>
-      <yloc>12</yloc>
+      <xloc>432</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1111,8 +1115,8 @@ else if (len_year >= 11) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
-      <yloc>32</yloc>
+      <xloc>288</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1319,8 +1323,8 @@ else if (len_year >= 11) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>84</xloc>
-      <yloc>24</yloc>
+      <xloc>160</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1533,8 +1537,8 @@ else if (len_year >= 11) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
-      <yloc>16</yloc>
+      <xloc>592</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1599,8 +1603,8 @@ else if (len_year >= 11) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>624</xloc>
-      <yloc>16</yloc>
+      <xloc>720</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1640,8 +1644,8 @@ WHERE country &lt;&gt; ''
       </output>
     </remotesteps>
     <GUI>
-      <xloc>32</xloc>
-      <yloc>112</yloc>
+      <xloc>112</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1665,8 +1669,8 @@ WHERE country &lt;&gt; ''
       </output>
     </remotesteps>
     <GUI>
-      <xloc>840</xloc>
-      <yloc>12</yloc>
+      <xloc>976</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1690,8 +1694,8 @@ WHERE country &lt;&gt; ''
       </output>
     </remotesteps>
     <GUI>
-      <xloc>588</xloc>
-      <yloc>120</yloc>
+      <xloc>656</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

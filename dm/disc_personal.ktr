@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>fact_disc</name>
+    <name>disc_personal</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -587,7 +587,7 @@
     <server>${SC_HOST}</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>evaluacenter</database>
+    <database>eva_new_ori</database>
     <port>3306</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
@@ -761,18 +761,8 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Select values 2</from>
-      <to>Fact Disc</to>
-      <enabled>N</enabled>
-    </hop>
-    <hop>
       <from>dim type disc</from>
       <to>Replace in string</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select values 2</from>
-      <to>Disc</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -781,8 +771,8 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Disc</from>
-      <to>Dummy (do nothing) 2</to>
+      <from>Select values 2</from>
+      <to>Disc Personal</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -852,8 +842,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>384</xloc>
-      <yloc>224</yloc>
+      <xloc>352</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -925,8 +915,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>704</xloc>
-      <yloc>224</yloc>
+      <xloc>672</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -957,13 +947,13 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>704</xloc>
-      <yloc>80</yloc>
+      <xloc>672</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Disc</name>
+    <name>Disc Personal</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -975,11 +965,11 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>disc</connection>
     <schema>disc</schema>
-    <table>disc</table>
+    <table>disc_personal</table>
     <commit>1000</commit>
-    <truncate>N</truncate>
+    <truncate>Y</truncate>
     <ignore_errors>Y</ignore_errors>
-    <use_batch>N</use_batch>
+    <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
@@ -1097,8 +1087,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
-      <yloc>416</yloc>
+      <xloc>880</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1122,108 +1112,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
-      <yloc>400</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Fact Disc</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>dm</connection>
-    <schema>dm</schema>
-    <table>fact_disc</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>N</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>sk_date</column_name>
-        <stream_name>sk_metric_date</stream_name>
-      </field>
-      <field>
-        <column_name>sk_age</column_name>
-        <stream_name>sk_age</stream_name>
-      </field>
-      <field>
-        <column_name>sk_sector</column_name>
-        <stream_name>sk_sector</stream_name>
-      </field>
-      <field>
-        <column_name>sk_activity</column_name>
-        <stream_name>sk_activity</stream_name>
-      </field>
-      <field>
-        <column_name>sk_type_disc</column_name>
-        <stream_name>sk_type_disc</stream_name>
-      </field>
-      <field>
-        <column_name>sk_disc</column_name>
-        <stream_name>sk_disc</stream_name>
-      </field>
-      <field>
-        <column_name>sk_country_account</column_name>
-        <stream_name>sk_country_account</stream_name>
-      </field>
-      <field>
-        <column_name>sk_country_eval</column_name>
-        <stream_name>sk_country_eval</stream_name>
-      </field>
-      <field>
-        <column_name>sk_study</column_name>
-        <stream_name>sk_study</stream_name>
-      </field>
-      <field>
-        <column_name>sk_evaluado</column_name>
-        <stream_name>sk_evaluado</stream_name>
-      </field>
-      <field>
-        <column_name>sk_account</column_name>
-        <stream_name>sk_account</stream_name>
-      </field>
-      <field>
-        <column_name>gender</column_name>
-        <stream_name>sexo</stream_name>
-      </field>
-      <field>
-        <column_name>ismale</column_name>
-        <stream_name>ismale</stream_name>
-      </field>
-      <field>
-        <column_name>isfemale</column_name>
-        <stream_name>isfemale</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1152</xloc>
-      <yloc>544</yloc>
+      <xloc>240</xloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1252,7 +1142,7 @@ SQL = SQL + sqlString;</jsScript_script>
             <value>
               <name>constant</name>
               <type>Integer</type>
-              <text>10</text>
+              <text>0</text>
               <length>-1</length>
               <precision>0</precision>
               <isnull>N</isnull>
@@ -1268,7 +1158,7 @@ SQL = SQL + sqlString;</jsScript_script>
             <value>
               <name>constant</name>
               <type>String</type>
-              <text>100</text>
+              <text>120</text>
               <length>-1</length>
               <precision>-1</precision>
               <isnull>N</isnull>
@@ -1287,8 +1177,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>224</yloc>
+      <xloc>464</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1353,8 +1243,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>80</yloc>
+      <xloc>464</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1425,8 +1315,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>592</xloc>
-      <yloc>80</yloc>
+      <xloc>560</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1491,8 +1381,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
-      <yloc>224</yloc>
+      <xloc>784</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1551,8 +1441,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>928</xloc>
-      <yloc>224</yloc>
+      <xloc>896</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1611,8 +1501,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
-      <yloc>80</yloc>
+      <xloc>784</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1695,8 +1585,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
-      <yloc>224</yloc>
+      <xloc>240</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1749,8 +1639,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>592</xloc>
-      <yloc>224</yloc>
+      <xloc>560</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1782,8 +1672,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>384</xloc>
-      <yloc>80</yloc>
+      <xloc>352</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1828,8 +1718,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
-      <yloc>80</yloc>
+      <xloc>240</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1867,8 +1757,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1056</xloc>
-      <yloc>80</yloc>
+      <xloc>1024</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1906,8 +1796,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1168</xloc>
-      <yloc>80</yloc>
+      <xloc>1136</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1951,8 +1841,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>96</xloc>
-      <yloc>224</yloc>
+      <xloc>112</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2163,8 +2053,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1120</xloc>
-      <yloc>416</yloc>
+      <xloc>1072</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2203,8 +2093,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1056</xloc>
-      <yloc>224</yloc>
+      <xloc>1024</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2243,8 +2133,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1264</xloc>
-      <yloc>80</yloc>
+      <xloc>1232</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2305,8 +2195,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1168</xloc>
-      <yloc>224</yloc>
+      <xloc>1136</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2362,8 +2252,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>928</xloc>
-      <yloc>80</yloc>
+      <xloc>896</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2424,8 +2314,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1264</xloc>
-      <yloc>224</yloc>
+      <xloc>1232</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2441,13 +2331,12 @@ SQL = SQL + sqlString;</jsScript_script>
       <schema_name/>
     </partitioning>
     <connection>ds_evaluacenter</connection>
-    <sql>SELECT id,project_id,account_id,parent_id,0 as ismale, 0 as isfemale, 1 as persona,
+    <sql>SELECT id,project_id,account_id,parent_id,0 AS ismale, 0 AS isfemale, 1 AS persona,
 level_id,STATUS,cost,created_at,userAssigned_id,creatorUser_id,TYPE,factorNatural,d,i,s,c 
 FROM evaluation_instance
-WHERE TYPE ='disc' 
+WHERE TYPE ='discjovenes' AND cache_evaluation_type_main = 'discpersonal' 
 AND factorNatural IS NOT NULL
-AND d > 0
-</sql>
+AND d > 0</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -2462,8 +2351,8 @@ AND d > 0
       </output>
     </remotesteps>
     <GUI>
-      <xloc>96</xloc>
-      <yloc>112</yloc>
+      <xloc>112</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2533,61 +2422,12 @@ if (gender == "m") {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1264</xloc>
-      <yloc>416</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Dummy (do nothing) 2</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>816</xloc>
-      <yloc>512</yloc>
+      <xloc>1232</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step_error_handling>
-    <error>
-      <source_step>Disc</source_step>
-      <target_step>Dummy (do nothing) 2</target_step>
-      <is_enabled>Y</is_enabled>
-      <nr_valuename/>
-      <descriptions_valuename/>
-      <fields_valuename/>
-      <codes_valuename/>
-      <max_errors/>
-      <max_pct_errors/>
-      <min_pct_rows/>
-    </error>
-    <error>
-      <source_step>Fact Disc</source_step>
-      <target_step/>
-      <is_enabled>N</is_enabled>
-      <nr_valuename/>
-      <descriptions_valuename/>
-      <fields_valuename/>
-      <codes_valuename/>
-      <max_errors/>
-      <max_pct_errors/>
-      <min_pct_rows/>
-    </error>
     <error>
       <source_step>Find evsl</source_step>
       <target_step>Dummy (do nothing)</target_step>

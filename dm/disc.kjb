@@ -367,6 +367,7 @@
       <name>Dim Person</name>
       <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
       <filename>${Internal.Entry.Current.Directory}/dim_person.ktr</filename>
@@ -406,13 +407,15 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>832</xloc>
+      <xloc>816</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Dim Activity</name>
       <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
       <filename>${Internal.Entry.Current.Directory}/dim_wactivity.ktr</filename>
@@ -444,11 +447,13 @@
       <nr>1</nr>
       <xloc>592</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Dim Sector</name>
       <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
       <filename>${Internal.Entry.Current.Directory}/dim_wsector.ktr</filename>
@@ -480,11 +485,13 @@
       <nr>2</nr>
       <xloc>160</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Dim Study</name>
       <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
       <filename>${Internal.Entry.Current.Directory}/dim_study_level.ktr</filename>
@@ -516,11 +523,13 @@
       <nr>2</nr>
       <xloc>256</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Clean DB</name>
       <description/>
       <type>SQL</type>
+      <attributes/>
       <sql>SET FOREIGN_KEY_CHECKS = 0; 
 truncate table fact_disc;
 truncate table dim_evaluado;
@@ -545,21 +554,25 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <nr>0</nr>
       <xloc>48</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Success</name>
       <description/>
       <type>SUCCESS</type>
+      <attributes/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1328</xloc>
+      <xloc>1472</xloc>
       <yloc>192</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Disc</name>
       <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
       <filename>${Internal.Entry.Current.Directory}/fact_disc.ktr</filename>
@@ -591,11 +604,13 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <nr>1</nr>
       <xloc>1024</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Dim Account</name>
       <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
       <filename>${Internal.Entry.Current.Directory}/dim_account.ktr</filename>
@@ -625,13 +640,15 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>464</xloc>
+      <xloc>480</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Evaluado >0</name>
       <description/>
       <type>EVAL_TABLE_CONTENT</type>
+      <attributes/>
       <connection>dm</connection>
       <schemaname/>
       <tablename>dim_evaluado</tablename>
@@ -647,11 +664,13 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <nr>0</nr>
       <xloc>928</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Actividad >0</name>
       <description/>
       <type>EVAL_TABLE_CONTENT</type>
+      <attributes/>
       <connection>dm</connection>
       <schemaname/>
       <tablename>dim_wactivity</tablename>
@@ -665,24 +684,28 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>720</xloc>
+      <xloc>704</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Abort job</name>
       <description/>
       <type>ABORT</type>
+      <attributes/>
       <message/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>672</xloc>
+      <xloc>736</xloc>
       <yloc>48</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Start</name>
       <description/>
       <type>SPECIAL</type>
+      <attributes/>
       <start>Y</start>
       <dummy>N</dummy>
       <repeat>N</repeat>
@@ -698,11 +721,13 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <nr>0</nr>
       <xloc>48</xloc>
       <yloc>192</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Dim Age</name>
       <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
       <filename>${Internal.Entry.Current.Directory}/dim_age.ktr</filename>
@@ -732,17 +757,20 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>352</xloc>
+      <xloc>368</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
-      <name>Adaptado</name>
+      <name>Calcular Adaptado</name>
       <description/>
       <type>JOB</type>
+      <attributes/>
       <specification_method>filename</specification_method>
       <job_object_id/>
       <filename>${Internal.Entry.Current.Directory}/adaptado.kjb</filename>
       <jobname/>
+      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -766,13 +794,15 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1328</xloc>
+      <xloc>1472</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Disc jovenes</name>
       <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
       <filename>${Internal.Entry.Current.Directory}/disc_jovenes.ktr</filename>
@@ -804,11 +834,13 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <nr>2</nr>
       <xloc>1120</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
     <entry>
       <name>Carreras</name>
       <description/>
       <type>TRANS</type>
+      <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
       <filename>${Internal.Entry.Current.Directory}/carrerasBusqueda.ktr</filename>
@@ -838,8 +870,47 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
+      <xloc>1344</xloc>
+      <yloc>352</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Disc Personal</name>
+      <description/>
+      <type>TRANS</type>
+      <attributes/>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/disc_personal.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile>${ETL_DIR}/f_disc</logfile>
+      <logext>log</logext>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration>Pentaho local</run_configuration>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>1</nr>
       <xloc>1232</xloc>
       <yloc>352</yloc>
+      <attributes_kjc/>
     </entry>
   </entries>
   <hops>
@@ -988,7 +1059,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Adaptado</from>
+      <from>Calcular Adaptado</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -997,7 +1068,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Adaptado</from>
+      <from>Calcular Adaptado</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1051,8 +1122,35 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <unconditional>N</unconditional>
     </hop>
     <hop>
+      <from>Carreras</from>
+      <to>Calcular Adaptado</to>
+      <from_nr>1</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Carreras</from>
+      <to>Abort job</to>
+      <from_nr>1</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
       <from>Disc jovenes</from>
-      <to>Carreras</to>
+      <to>Abort job</to>
+      <from_nr>2</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Disc jovenes</from>
+      <to>Disc Personal</to>
       <from_nr>2</from_nr>
       <to_nr>1</to_nr>
       <enabled>Y</enabled>
@@ -1060,30 +1158,12 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Carreras</from>
-      <to>Adaptado</to>
+      <from>Disc Personal</from>
+      <to>Carreras</to>
       <from_nr>1</from_nr>
-      <to_nr>0</to_nr>
+      <to_nr>1</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Carreras</from>
-      <to>Abort job</to>
-      <from_nr>1</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Disc jovenes</from>
-      <to>Abort job</to>
-      <from_nr>2</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
   </hops>

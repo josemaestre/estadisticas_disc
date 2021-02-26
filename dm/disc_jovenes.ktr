@@ -587,7 +587,7 @@
     <server>${SC_HOST}</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>evaluacenter</database>
+    <database>eva2</database>
     <port>3306</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
@@ -842,8 +842,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>160</yloc>
+      <xloc>400</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -915,8 +915,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>608</xloc>
-      <yloc>160</yloc>
+      <xloc>720</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -947,8 +947,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>608</xloc>
-      <yloc>16</yloc>
+      <xloc>720</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1071,8 +1071,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>832</xloc>
-      <yloc>352</yloc>
+      <xloc>944</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1096,8 +1096,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
-      <yloc>272</yloc>
+      <xloc>288</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1161,8 +1161,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>400</xloc>
-      <yloc>160</yloc>
+      <xloc>512</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1227,8 +1227,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>400</xloc>
-      <yloc>16</yloc>
+      <xloc>512</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1299,8 +1299,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>16</yloc>
+      <xloc>608</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1365,8 +1365,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
-      <yloc>160</yloc>
+      <xloc>832</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1425,8 +1425,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>832</xloc>
-      <yloc>160</yloc>
+      <xloc>944</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1485,8 +1485,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
-      <yloc>16</yloc>
+      <xloc>832</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1569,8 +1569,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
-      <yloc>160</yloc>
+      <xloc>288</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1623,8 +1623,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>160</yloc>
+      <xloc>608</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1656,8 +1656,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>16</yloc>
+      <xloc>400</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1702,8 +1702,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
-      <yloc>16</yloc>
+      <xloc>288</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1741,8 +1741,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>960</xloc>
-      <yloc>16</yloc>
+      <xloc>1072</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1780,8 +1780,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1072</xloc>
-      <yloc>16</yloc>
+      <xloc>1184</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1825,8 +1825,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>48</xloc>
-      <yloc>160</yloc>
+      <xloc>160</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2037,8 +2037,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1024</xloc>
-      <yloc>352</yloc>
+      <xloc>1136</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2077,8 +2077,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>960</xloc>
-      <yloc>160</yloc>
+      <xloc>1072</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2117,8 +2117,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1168</xloc>
-      <yloc>16</yloc>
+      <xloc>1280</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2179,8 +2179,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1072</xloc>
-      <yloc>160</yloc>
+      <xloc>1184</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2236,8 +2236,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>832</xloc>
-      <yloc>16</yloc>
+      <xloc>944</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2298,8 +2298,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1168</xloc>
-      <yloc>160</yloc>
+      <xloc>1280</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2336,8 +2336,8 @@ WHERE TYPE ='discjovenes'
       </output>
     </remotesteps>
     <GUI>
-      <xloc>48</xloc>
-      <yloc>0</yloc>
+      <xloc>160</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2407,8 +2407,8 @@ if (gender == "m") {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1168</xloc>
-      <yloc>352</yloc>
+      <xloc>1280</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
