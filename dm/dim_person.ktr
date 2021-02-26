@@ -517,7 +517,7 @@
     <server>${SC_HOST}</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>eva_new_ori</database>
+    <database>evaluacenter</database>
     <port>3306</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
