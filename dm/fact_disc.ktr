@@ -2488,7 +2488,7 @@ AND d > 0
     </remotesteps>
     <GUI>
       <xloc>96</xloc>
-      <yloc>112</yloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
