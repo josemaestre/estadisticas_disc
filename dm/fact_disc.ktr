@@ -1148,7 +1148,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </remotesteps>
     <GUI>
       <xloc>816</xloc>
-      <yloc>512</yloc>
+      <yloc>528</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1247,7 +1247,7 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1152</xloc>
+      <xloc>1120</xloc>
       <yloc>544</yloc>
       <draw>Y</draw>
     </GUI>
