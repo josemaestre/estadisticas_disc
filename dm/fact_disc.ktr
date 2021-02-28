@@ -979,7 +979,7 @@ SQL = SQL + sqlString;</jsScript_script>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>Y</ignore_errors>
-    <use_batch>N</use_batch>
+    <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
