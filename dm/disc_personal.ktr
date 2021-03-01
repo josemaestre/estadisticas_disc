@@ -775,11 +775,6 @@
       <to>Disc Personal</to>
       <enabled>Y</enabled>
     </hop>
-    <hop>
-      <from>Disc Personal</from>
-      <to>Dummy (do nothing) 2</to>
-      <enabled>Y</enabled>
-    </hop>
   </order>
   <step>
     <name>Calculator</name>
@@ -972,7 +967,7 @@ SQL = SQL + sqlString;</jsScript_script>
     <schema>disc</schema>
     <table>disc_personal</table>
     <commit>1000</commit>
-    <truncate>N</truncate>
+    <truncate>Y</truncate>
     <ignore_errors>Y</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
@@ -1092,7 +1087,7 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
+      <xloc>848</xloc>
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2432,44 +2427,7 @@ if (gender == "m") {
       <draw>Y</draw>
     </GUI>
   </step>
-  <step>
-    <name>Dummy (do nothing) 2</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>816</xloc>
-      <yloc>608</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
   <step_error_handling>
-    <error>
-      <source_step>Disc Personal</source_step>
-      <target_step>Dummy (do nothing) 2</target_step>
-      <is_enabled>Y</is_enabled>
-      <nr_valuename/>
-      <descriptions_valuename/>
-      <fields_valuename/>
-      <codes_valuename/>
-      <max_errors/>
-      <max_pct_errors/>
-      <min_pct_rows/>
-    </error>
     <error>
       <source_step>Find evsl</source_step>
       <target_step>Dummy (do nothing)</target_step>
