@@ -592,7 +592,7 @@
     <server>${SC_HOST}</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>eva_new_ori</database>
+    <database>evaluacenter</database>
     <port>3306</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
@@ -928,7 +928,7 @@ for(var i=0,len=arreglo .length;i&lt;len;i++){
       <schema_name/>
     </partitioning>
     <connection>dm</connection>
-    <cache>N</cache>
+    <cache>Y</cache>
     <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
@@ -983,7 +983,7 @@ for(var i=0,len=arreglo .length;i&lt;len;i++){
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>Y</cache_load_all>
+    <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema/>
@@ -1167,6 +1167,45 @@ SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'C' AS letter, ${evalu
     <GUI>
       <xloc>208</xloc>
       <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Get rows from result</name>
+    <type>RowsFromResult</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>table</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>evaluacion</name>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>208</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1668,7 +1707,7 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
     <connection>disc</connection>
     <skip_lookup>N</skip_lookup>
     <commit>100</commit>
-    <use_batch>N</use_batch>
+    <use_batch>Y</use_batch>
     <error_ignored>N</error_ignored>
     <ignore_flag_field/>
     <lookup>
@@ -1783,45 +1822,6 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
     <GUI>
       <xloc>304</xloc>
       <yloc>224</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Get rows from result</name>
-    <type>RowsFromResult</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>table</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>evaluacion</name>
-        <type>Integer</type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>208</xloc>
-      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
