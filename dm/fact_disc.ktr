@@ -979,7 +979,7 @@ SQL = SQL + sqlString;</jsScript_script>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>Y</ignore_errors>
-    <use_batch>Y</use_batch>
+    <use_batch>N</use_batch>
     <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
@@ -1467,7 +1467,7 @@ SQL = SQL + sqlString;</jsScript_script>
       <schema_name/>
     </partitioning>
     <connection>dm</connection>
-    <cache>N</cache>
+    <cache>Y</cache>
     <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
@@ -1654,7 +1654,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>Y</cache_load_all>
+    <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
