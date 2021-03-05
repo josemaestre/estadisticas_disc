@@ -941,7 +941,7 @@ for(var i=0,len=arreglo .length;i&lt;len;i++){
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>Y</cache_load_all>
+    <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema/>
@@ -1777,7 +1777,7 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <loglevel>log_level_basic</loglevel>
+    <loglevel>log_level_debug</loglevel>
     <displayHeader>Y</displayHeader>
     <limitRows>N</limitRows>
     <limitRowsNumber>0</limitRowsNumber>
@@ -1809,7 +1809,7 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <loglevel>log_level_detailed</loglevel>
+    <loglevel>log_level_debug</loglevel>
     <displayHeader>Y</displayHeader>
     <limitRows>N</limitRows>
     <limitRowsNumber>0</limitRowsNumber>
