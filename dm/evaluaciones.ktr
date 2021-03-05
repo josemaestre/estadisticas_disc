@@ -880,7 +880,7 @@ query= "SELECT id as evaluacion  FROM "  + tabla_1 + " WHERE factor_adaptado IS 
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <loglevel>log_level_debug</loglevel>
+    <loglevel>log_level_rowlevel</loglevel>
     <displayHeader>Y</displayHeader>
     <limitRows>N</limitRows>
     <limitRowsNumber>0</limitRowsNumber>

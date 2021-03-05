@@ -750,12 +750,12 @@
     <hop>
       <from>Get Variables</from>
       <to>Write to log 2</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Write to log 2</from>
       <to>Table input</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Get rows from result</from>
@@ -765,7 +765,7 @@
     <hop>
       <from>Get Variables</from>
       <to>Table input</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Calc Princ Factor</from>
@@ -951,7 +951,7 @@ for(var i=0,len=arreglo .length;i&lt;len;i++){
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema/>
@@ -1787,7 +1787,7 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <loglevel>log_level_debug</loglevel>
+    <loglevel>log_level_rowlevel</loglevel>
     <displayHeader>Y</displayHeader>
     <limitRows>N</limitRows>
     <limitRowsNumber>0</limitRowsNumber>
@@ -1819,7 +1819,7 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <loglevel>log_level_debug</loglevel>
+    <loglevel>log_level_rowlevel</loglevel>
     <displayHeader>Y</displayHeader>
     <limitRows>N</limitRows>
     <limitRowsNumber>0</limitRowsNumber>

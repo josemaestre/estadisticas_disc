@@ -385,7 +385,7 @@
       <type>WRITE_TO_LOG</type>
       <attributes/>
       <logmessage>***** CALCULANDO DISC ADAPTADO para el ID: ${evaluacion}  *****</logmessage>
-      <loglevel>Debug</loglevel>
+      <loglevel>Rowlevel</loglevel>
       <logsubject/>
       <parallel>N</parallel>
       <draw>Y</draw>

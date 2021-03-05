@@ -418,7 +418,7 @@
       <type>WRITE_TO_LOG</type>
       <attributes/>
       <logmessage>************************************</logmessage>
-      <loglevel>Debug</loglevel>
+      <loglevel>Rowlevel</loglevel>
       <logsubject>***********EMPIEZA EL BUCLE************ </logsubject>
       <parallel>N</parallel>
       <draw>Y</draw>
