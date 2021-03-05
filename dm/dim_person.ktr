@@ -467,6 +467,10 @@
         <attribute>true</attribute>
       </attribute>
       <attribute>
+        <code>EXTRA_OPTION_MYSQL.useSSL</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
         <code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code>
         <attribute>false</attribute>
       </attribute>
@@ -532,6 +536,10 @@
       <attribute>
         <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
         <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useSSL</code>
+        <attribute>false</attribute>
       </attribute>
       <attribute>
         <code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code>
@@ -694,7 +702,7 @@
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
-    <use_batch>N</use_batch>
+    <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
