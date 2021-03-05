@@ -555,7 +555,7 @@
     <hop>
       <from>Get variables</from>
       <to>Write to log 2</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Dynamic SQL row</from>
@@ -565,27 +565,27 @@
     <hop>
       <from>Calcular DISC Adapatado</from>
       <to>Write to log 3 2</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Write to log 3 2</from>
       <to>Copy rows to result</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Write to log 2</from>
       <to>Modified JavaScript value</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Get variables</from>
       <to>Modified JavaScript value</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Calcular DISC Adapatado</from>
       <to>Copy rows to result</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
   </order>
   <step>
@@ -843,13 +843,11 @@ query= "SELECT id as evaluacion  FROM "  + tabla_1 + " WHERE factor_adaptado IS 
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <loglevel>log_level_basic</loglevel>
+    <loglevel>log_level_debug</loglevel>
     <displayHeader>Y</displayHeader>
     <limitRows>N</limitRows>
     <limitRowsNumber>0</limitRowsNumber>
     <logmessage>\n XXXXXXXXXXXXX  ROCESANDO XXXXXXXX
-
-\n Procesando  fuente: 
 
 </logmessage>
     <fields>
@@ -882,7 +880,7 @@ query= "SELECT id as evaluacion  FROM "  + tabla_1 + " WHERE factor_adaptado IS 
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <loglevel>log_level_detailed</loglevel>
+    <loglevel>log_level_debug</loglevel>
     <displayHeader>Y</displayHeader>
     <limitRows>N</limitRows>
     <limitRowsNumber>0</limitRowsNumber>
@@ -897,39 +895,6 @@ query= "SELECT id as evaluacion  FROM "  + tabla_1 + " WHERE factor_adaptado IS 
       </field>
       <field>
         <name>ExecutionNrErrors</name>
-      </field>
-      <field>
-        <name>ExecutionLinesRead</name>
-      </field>
-      <field>
-        <name>ExecutionLinesWritten</name>
-      </field>
-      <field>
-        <name>ExecutionLinesInput</name>
-      </field>
-      <field>
-        <name>ExecutionLinesOutput</name>
-      </field>
-      <field>
-        <name>ExecutionLinesRejected</name>
-      </field>
-      <field>
-        <name>ExecutionLinesUpdated</name>
-      </field>
-      <field>
-        <name>ExecutionLinesDeleted</name>
-      </field>
-      <field>
-        <name>ExecutionFilesRetrieved</name>
-      </field>
-      <field>
-        <name>ExecutionExitStatus</name>
-      </field>
-      <field>
-        <name>ExecutionLogText</name>
-      </field>
-      <field>
-        <name>ExecutionLogChannelId</name>
       </field>
     </fields>
     <attributes/>

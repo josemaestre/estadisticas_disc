@@ -710,12 +710,12 @@
     <hop>
       <from>Calc Princ Factor</from>
       <to>Write to log</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Write to log</from>
       <to>Update Factor Adaptado</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Add constants</from>
@@ -770,7 +770,7 @@
     <hop>
       <from>Calc Princ Factor</from>
       <to>Update Factor Adaptado</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
   </order>
   <step>
