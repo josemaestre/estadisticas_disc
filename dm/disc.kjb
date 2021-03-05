@@ -536,7 +536,7 @@
       <attributes/>
       <sql>SET FOREIGN_KEY_CHECKS = 0; 
 truncate table fact_disc;
---truncate table dim_evaluado;
+truncate table dim_evaluado;
 truncate table dim_wactivity;
 truncate table dim_wsector;
 truncate table dim_type_disc;
