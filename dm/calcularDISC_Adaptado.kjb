@@ -316,7 +316,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>256</xloc>
-      <yloc>176</yloc>
+      <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -390,7 +390,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>464</xloc>
+      <xloc>336</xloc>
       <yloc>176</yloc>
       <attributes_kjc/>
     </entry>
@@ -410,7 +410,7 @@
       <to>log</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
@@ -422,6 +422,15 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Start</from>
+      <to>Transformation</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
