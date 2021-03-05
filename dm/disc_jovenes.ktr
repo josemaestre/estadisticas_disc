@@ -466,6 +466,10 @@
         <attribute>true</attribute>
       </attribute>
       <attribute>
+        <code>EXTRA_OPTION_MYSQL.useSSL</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
         <code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code>
         <attribute>false</attribute>
       </attribute>
@@ -537,6 +541,10 @@
         <attribute>true</attribute>
       </attribute>
       <attribute>
+        <code>EXTRA_OPTION_MYSQL.useSSL</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
         <code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code>
         <attribute>false</attribute>
       </attribute>
@@ -602,6 +610,10 @@
       <attribute>
         <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
         <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useSSL</code>
+        <attribute>false</attribute>
       </attribute>
       <attribute>
         <code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code>
@@ -1179,7 +1191,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1245,7 +1257,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1317,7 +1329,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1383,7 +1395,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1443,7 +1455,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1503,7 +1515,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1587,7 +1599,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
