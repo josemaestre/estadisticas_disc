@@ -767,11 +767,6 @@
       <to>Table input</to>
       <enabled>N</enabled>
     </hop>
-    <hop>
-      <from>Calc Princ Factor</from>
-      <to>Update Factor Adaptado</to>
-      <enabled>N</enabled>
-    </hop>
   </order>
   <step>
     <name>Add constants</name>
@@ -1771,8 +1766,8 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1488</xloc>
-      <yloc>336</yloc>
+      <xloc>1376</xloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1803,8 +1798,8 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1392</xloc>
-      <yloc>48</yloc>
+      <xloc>1376</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

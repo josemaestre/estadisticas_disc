@@ -315,12 +315,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>256</xloc>
-      <yloc>304</yloc>
+      <xloc>128</xloc>
+      <yloc>176</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Transformation</name>
+      <name>Calculadora</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -363,7 +363,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>656</xloc>
+      <xloc>576</xloc>
       <yloc>176</yloc>
       <attributes_kjc/>
     </entry>
@@ -397,7 +397,7 @@
   </entries>
   <hops>
     <hop>
-      <from>Transformation</from>
+      <from>Calculadora</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -416,21 +416,12 @@
     </hop>
     <hop>
       <from>log</from>
-      <to>Transformation</to>
+      <to>Calculadora</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Start</from>
-      <to>Transformation</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>

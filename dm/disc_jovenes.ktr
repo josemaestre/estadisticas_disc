@@ -779,7 +779,7 @@
     </hop>
     <hop>
       <from>Select values 2</from>
-      <to>Disc</to>
+      <to>DISC Jovenes</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -933,39 +933,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </GUI>
   </step>
   <step>
-    <name>Dim Age</name>
-    <type>DynamicSQLRow</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>dm</connection>
-    <rowlimit>1</rowlimit>
-    <sql>SELECT sk_age , group_age from dim_age where ? >= min and ? &lt;= max</sql>
-    <outer_join>N</outer_join>
-    <replace_vars>N</replace_vars>
-    <sql_fieldname>SQL</sql_fieldname>
-    <query_only_on_change>N</query_only_on_change>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>720</xloc>
-      <yloc>96</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Disc</name>
+    <name>DISC Jovenes</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -979,7 +947,7 @@ SQL = SQL + sqlString;</jsScript_script>
     <schema>disc</schema>
     <table>disc_jovenes</table>
     <commit>1000</commit>
-    <truncate>Y</truncate>
+    <truncate>N</truncate>
     <ignore_errors>Y</ignore_errors>
     <use_batch>N</use_batch>
     <specify_fields>Y</specify_fields>
@@ -1085,6 +1053,38 @@ SQL = SQL + sqlString;</jsScript_script>
     <GUI>
       <xloc>944</xloc>
       <yloc>432</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Dim Age</name>
+    <type>DynamicSQLRow</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>dm</connection>
+    <rowlimit>1</rowlimit>
+    <sql>SELECT sk_age , group_age from dim_age where ? >= min and ? &lt;= max</sql>
+    <outer_join>N</outer_join>
+    <replace_vars>N</replace_vars>
+    <sql_fieldname>SQL</sql_fieldname>
+    <query_only_on_change>N</query_only_on_change>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2426,7 +2426,7 @@ if (gender == "m") {
   </step>
   <step_error_handling>
     <error>
-      <source_step>Disc</source_step>
+      <source_step>DISC Jovenes</source_step>
       <target_step/>
       <is_enabled>Y</is_enabled>
       <nr_valuename/>
