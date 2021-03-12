@@ -663,7 +663,7 @@
   </connection>
   <order>
     <hop>
-      <from>ds_evaluation_instance</from>
+      <from>Fuente para DISC Personal</from>
       <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
@@ -779,7 +779,7 @@
     </hop>
     <hop>
       <from>Find evsl</from>
-      <to>Dummy (do nothing)</to>
+      <to>Evaluados no encontrados</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -981,7 +981,7 @@ SQL = SQL + sqlString;</jsScript_script>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>Y</ignore_errors>
-    <use_batch>Y</use_batch>
+    <use_batch>N</use_batch>
     <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
@@ -1099,13 +1099,13 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>848</xloc>
-      <yloc>464</yloc>
+      <xloc>928</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Dummy (do nothing)</name>
+    <name>Evaluados no encontrados</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -2065,8 +2065,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1072</xloc>
-      <yloc>464</yloc>
+      <xloc>1104</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2332,7 +2332,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </GUI>
   </step>
   <step>
-    <name>ds_evaluation_instance</name>
+    <name>Fuente para DISC Personal</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -2435,14 +2435,14 @@ if (gender == "m") {
     </remotesteps>
     <GUI>
       <xloc>1232</xloc>
-      <yloc>464</yloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step_error_handling>
     <error>
       <source_step>Find evsl</source_step>
-      <target_step>Dummy (do nothing)</target_step>
+      <target_step>Evaluados no encontrados</target_step>
       <is_enabled>Y</is_enabled>
       <nr_valuename/>
       <descriptions_valuename/>

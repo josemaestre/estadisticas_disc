@@ -663,7 +663,7 @@
   </connection>
   <order>
     <hop>
-      <from>ds_evaluation_instance</from>
+      <from>Fuente Para DISC Jovenes</from>
       <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
@@ -784,7 +784,7 @@
     </hop>
     <hop>
       <from>Find evsl</from>
-      <to>Dummy (do nothing)</to>
+      <to>Evaluados no encontrados</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -1052,7 +1052,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </remotesteps>
     <GUI>
       <xloc>944</xloc>
-      <yloc>432</yloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1089,7 +1089,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </GUI>
   </step>
   <step>
-    <name>Dummy (do nothing)</name>
+    <name>Evaluados no encontrados</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -2050,7 +2050,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </remotesteps>
     <GUI>
       <xloc>1136</xloc>
-      <yloc>432</yloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2316,7 +2316,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </GUI>
   </step>
   <step>
-    <name>ds_evaluation_instance</name>
+    <name>Fuente Para DISC Jovenes</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -2349,7 +2349,7 @@ WHERE TYPE ='discjovenes'
     </remotesteps>
     <GUI>
       <xloc>160</xloc>
-      <yloc>80</yloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2420,7 +2420,7 @@ if (gender == "m") {
     </remotesteps>
     <GUI>
       <xloc>1280</xloc>
-      <yloc>432</yloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2439,7 +2439,7 @@ if (gender == "m") {
     </error>
     <error>
       <source_step>Find evsl</source_step>
-      <target_step>Dummy (do nothing)</target_step>
+      <target_step>Evaluados no encontrados</target_step>
       <is_enabled>Y</is_enabled>
       <nr_valuename/>
       <descriptions_valuename/>

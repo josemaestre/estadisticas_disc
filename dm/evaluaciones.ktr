@@ -577,11 +577,6 @@
       <to>Modified JavaScript value</to>
       <enabled>Y</enabled>
     </hop>
-    <hop>
-      <from>Get variables</from>
-      <to>Modified JavaScript value</to>
-      <enabled>N</enabled>
-    </hop>
   </order>
   <step>
     <name>Calcular DISC Adapatado</name>
