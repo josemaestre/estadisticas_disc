@@ -785,7 +785,7 @@
     <hop>
       <from>Select values 2</from>
       <to>Disc Personal</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
   </order>
   <step>
@@ -1690,6 +1690,43 @@ SQL = SQL + sqlString;</jsScript_script>
     </GUI>
   </step>
   <step>
+    <name>Fuente para DISC Personal</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>ds_evaluacenter</connection>
+    <sql>SELECT id,project_id,account_id,parent_id,0 AS ismale, 0 AS isfemale, 1 AS persona,
+level_id,STATUS,cost,created_at,userAssigned_id,creatorUser_id,TYPE,factorNatural,d,i,s,c 
+FROM evaluation_instance
+WHERE TYPE ='discjovenes' AND cache_evaluation_type_main = 'discpersonal' 
+AND factorNatural IS NOT NULL
+AND d > 0</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>If field value is null</name>
     <type>IfNull</type>
     <description/>
@@ -2328,43 +2365,6 @@ SQL = SQL + sqlString;</jsScript_script>
     <GUI>
       <xloc>1232</xloc>
       <yloc>272</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Fuente para DISC Personal</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>ds_evaluacenter</connection>
-    <sql>SELECT id,project_id,account_id,parent_id,0 AS ismale, 0 AS isfemale, 1 AS persona,
-level_id,STATUS,cost,created_at,userAssigned_id,creatorUser_id,TYPE,factorNatural,d,i,s,c 
-FROM evaluation_instance
-WHERE TYPE ='discjovenes' AND cache_evaluation_type_main = 'discpersonal' 
-AND factorNatural IS NOT NULL
-AND d > 0</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>112</xloc>
-      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

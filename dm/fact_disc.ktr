@@ -785,7 +785,7 @@
     <hop>
       <from>Select values 2</from>
       <to>Disc</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Find evsl</from>
@@ -1136,131 +1136,6 @@ SQL = SQL + sqlString;</jsScript_script>
     <GUI>
       <xloc>272</xloc>
       <yloc>400</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Rechazo DISC</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>928</xloc>
-      <yloc>480</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Poblar Fact DISC</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>dm</connection>
-    <schema>dm</schema>
-    <table>fact_disc</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>N</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>sk_date</column_name>
-        <stream_name>sk_metric_date</stream_name>
-      </field>
-      <field>
-        <column_name>sk_age</column_name>
-        <stream_name>sk_age</stream_name>
-      </field>
-      <field>
-        <column_name>sk_sector</column_name>
-        <stream_name>sk_sector</stream_name>
-      </field>
-      <field>
-        <column_name>sk_activity</column_name>
-        <stream_name>sk_activity</stream_name>
-      </field>
-      <field>
-        <column_name>sk_type_disc</column_name>
-        <stream_name>sk_type_disc</stream_name>
-      </field>
-      <field>
-        <column_name>sk_disc</column_name>
-        <stream_name>sk_disc</stream_name>
-      </field>
-      <field>
-        <column_name>sk_country_account</column_name>
-        <stream_name>sk_country_account</stream_name>
-      </field>
-      <field>
-        <column_name>sk_country_eval</column_name>
-        <stream_name>sk_country_eval</stream_name>
-      </field>
-      <field>
-        <column_name>sk_study</column_name>
-        <stream_name>sk_study</stream_name>
-      </field>
-      <field>
-        <column_name>sk_evaluado</column_name>
-        <stream_name>sk_evaluado</stream_name>
-      </field>
-      <field>
-        <column_name>sk_account</column_name>
-        <stream_name>sk_account</stream_name>
-      </field>
-      <field>
-        <column_name>gender</column_name>
-        <stream_name>sexo</stream_name>
-      </field>
-      <field>
-        <column_name>ismale</column_name>
-        <stream_name>ismale</stream_name>
-      </field>
-      <field>
-        <column_name>isfemale</column_name>
-        <stream_name>isfemale</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1120</xloc>
-      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1825,6 +1700,44 @@ SQL = SQL + sqlString;</jsScript_script>
     </GUI>
   </step>
   <step>
+    <name>Fuente para DISC</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>ds_evaluacenter</connection>
+    <sql>SELECT id,project_id,account_id,parent_id,0 as ismale, 0 as isfemale, 1 as persona,
+level_id,STATUS,cost,created_at,userAssigned_id,creatorUser_id,TYPE,factorNatural,d,i,s,c 
+FROM evaluation_instance
+WHERE TYPE ='disc' 
+AND factorNatural IS NOT NULL
+AND d > 0
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>96</xloc>
+      <yloc>16</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>If field value is null</name>
     <type>IfNull</type>
     <description/>
@@ -1867,6 +1780,131 @@ SQL = SQL + sqlString;</jsScript_script>
     <GUI>
       <xloc>272</xloc>
       <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Poblar Fact DISC</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>dm</connection>
+    <schema>dm</schema>
+    <table>fact_disc</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>N</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>sk_date</column_name>
+        <stream_name>sk_metric_date</stream_name>
+      </field>
+      <field>
+        <column_name>sk_age</column_name>
+        <stream_name>sk_age</stream_name>
+      </field>
+      <field>
+        <column_name>sk_sector</column_name>
+        <stream_name>sk_sector</stream_name>
+      </field>
+      <field>
+        <column_name>sk_activity</column_name>
+        <stream_name>sk_activity</stream_name>
+      </field>
+      <field>
+        <column_name>sk_type_disc</column_name>
+        <stream_name>sk_type_disc</stream_name>
+      </field>
+      <field>
+        <column_name>sk_disc</column_name>
+        <stream_name>sk_disc</stream_name>
+      </field>
+      <field>
+        <column_name>sk_country_account</column_name>
+        <stream_name>sk_country_account</stream_name>
+      </field>
+      <field>
+        <column_name>sk_country_eval</column_name>
+        <stream_name>sk_country_eval</stream_name>
+      </field>
+      <field>
+        <column_name>sk_study</column_name>
+        <stream_name>sk_study</stream_name>
+      </field>
+      <field>
+        <column_name>sk_evaluado</column_name>
+        <stream_name>sk_evaluado</stream_name>
+      </field>
+      <field>
+        <column_name>sk_account</column_name>
+        <stream_name>sk_account</stream_name>
+      </field>
+      <field>
+        <column_name>gender</column_name>
+        <stream_name>sexo</stream_name>
+      </field>
+      <field>
+        <column_name>ismale</column_name>
+        <stream_name>ismale</stream_name>
+      </field>
+      <field>
+        <column_name>isfemale</column_name>
+        <stream_name>isfemale</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1120</xloc>
+      <yloc>464</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Rechazo DISC</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>480</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2467,44 +2505,6 @@ SQL = SQL + sqlString;</jsScript_script>
     </GUI>
   </step>
   <step>
-    <name>Fuente para DISC</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>ds_evaluacenter</connection>
-    <sql>SELECT id,project_id,account_id,parent_id,0 as ismale, 0 as isfemale, 1 as persona,
-level_id,STATUS,cost,created_at,userAssigned_id,creatorUser_id,TYPE,factorNatural,d,i,s,c 
-FROM evaluation_instance
-WHERE TYPE ='disc' 
-AND factorNatural IS NOT NULL
-AND d > 0
-</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>96</xloc>
-      <yloc>16</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>sexo</name>
     <type>ScriptValueMod</type>
     <description/>
@@ -2589,9 +2589,9 @@ if (gender == "m") {
       <min_pct_rows/>
     </error>
     <error>
-      <source_step>Poblar Fact DISC</source_step>
-      <target_step/>
-      <is_enabled>N</is_enabled>
+      <source_step>Find evsl</source_step>
+      <target_step>Evaluado no encontrado</target_step>
+      <is_enabled>Y</is_enabled>
       <nr_valuename/>
       <descriptions_valuename/>
       <fields_valuename/>
@@ -2601,9 +2601,9 @@ if (gender == "m") {
       <min_pct_rows/>
     </error>
     <error>
-      <source_step>Find evsl</source_step>
-      <target_step>Evaluado no encontrado</target_step>
-      <is_enabled>Y</is_enabled>
+      <source_step>Poblar Fact DISC</source_step>
+      <target_step/>
+      <is_enabled>N</is_enabled>
       <nr_valuename/>
       <descriptions_valuename/>
       <fields_valuename/>
