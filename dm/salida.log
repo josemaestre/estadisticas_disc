@@ -1,0 +1,373 @@
+#######################################################################
+WARNING:  no libwebkitgtk-1.0 detected, some features will be unavailable
+    Consider installing the package with apt-get or yum.
+    e.g. 'sudo apt-get install libwebkitgtk-1.0-0'
+#######################################################################
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+log4j:WARN Continuable parsing error 45 and column 76
+log4j:WARN Element type "rollingPolicy" must be declared.
+log4j:WARN Continuable parsing error 52 and column 14
+log4j:WARN The content of element type "appender" must match "(errorHandler?,param*,layout?,filter*,appender-ref*)".
+log4j:WARN Please set a rolling policy for the RollingFileAppender named 'pdi-execution-appender'
+14:02:19,099 INFO  [KarafBoot] Checking to see if org.pentaho.clean.karaf.cache is enabled
+14:02:19,184 INFO  [KarafInstance] 
+*******************************************************************************
+*** Karaf Instance Number: 1 at /opt/pdi/./system/karaf/caches/kitchen/data ***
+***   -1                                                                    ***
+*** FastBin Provider Port:52901                                             ***
+*** Karaf Port:8802                                                         ***
+*** OSGI Service Port:9051                                                  ***
+*******************************************************************************
+Dec 08, 2020 2:02:19 PM org.apache.karaf.main.Main$KarafLockCallback lockAquired
+INFO: Lock acquired. Setting startlevel to 100
+2020/12/08 14:02:19 - Kitchen - Start of run.
+2020-12-08 14:02:22.595:INFO:oejs.Server:jetty-8.1.15.v20140411
+2020-12-08 14:02:22.659:INFO:oejs.AbstractConnector:Started NIOSocketConnectorWrapper@0.0.0.0:9051
+Dec 08, 2020 2:02:22 PM org.apache.cxf.bus.osgi.CXFExtensionBundleListener addExtensions
+INFO: Adding the extensions from bundle org.apache.cxf.cxf-rt-management (182) [org.apache.cxf.management.InstrumentationManager]
+Dec 08, 2020 2:02:22 PM org.apache.cxf.bus.osgi.CXFExtensionBundleListener addExtensions
+INFO: Adding the extensions from bundle org.apache.cxf.cxf-rt-transports-http (183) [org.apache.cxf.transport.http.HTTPTransportFactory, org.apache.cxf.transport.http.HTTPWSDLExtensionLoader, org.apache.cxf.transport.http.policy.HTTPClientAssertionBuilder, org.apache.cxf.transport.http.policy.HTTPServerAssertionBuilder, org.apache.cxf.transport.http.policy.NoOpPolicyInterceptorProvider]
+Dec 08, 2020 2:02:22 PM org.pentaho.caching.impl.PentahoCacheManagerFactory$RegistrationHandler$1 onSuccess
+INFO: New Caching Service registered
+2020/12/08 14:02:24 - disc - Start of job execution
+log4j:ERROR No output stream or file set for the appender named [pdi-execution-appender].
+2020/12/08 14:02:24 - disc - Starting entry [Clean DB]
+Dec 08, 2020 2:02:25 PM org.apache.cxf.endpoint.ServerImpl initDestination
+INFO: Setting the server's publish address to be /lineage
+2020/12/08 14:02:25 - disc - Starting entry [Dim Sector]
+Dec 08, 2020 2:02:25 PM org.apache.cxf.endpoint.ServerImpl initDestination
+INFO: Setting the server's publish address to be /i18n
+2020/12/08 14:02:25 - Dim Sector - Using run configuration [Pentaho local]
+2020/12/08 14:02:25 - Dim Sector - Using legacy execution engine
+2020/12/08 14:02:25 - dim_wsector - Dispatching started for transformation [dim_wsector]
+Tue Dec 08 14:02:25 UTC 2020 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+2020/12/08 14:02:25 - dim_wactivity.0 - Connected to database [dm] (commit=1000)
+2020/12/08 14:02:25 - Generate rows.0 - Finished processing (I=0, O=0, R=0, W=1, U=0, E=0)
+2020/12/08 14:02:25 - Work Sector.0 - Finished reading query, closing connection.
+2020/12/08 14:02:25 - Work Sector.0 - Finished processing (I=20, O=0, R=0, W=20, U=0, E=0)
+2020/12/08 14:02:25 - Replace in string.0 - Finished processing (I=0, O=0, R=20, W=20, U=0, E=0)
+2020/12/08 14:02:25 - String operations.0 - Finished processing (I=0, O=0, R=20, W=20, U=0, E=0)
+2020/12/08 14:02:25 - Select values.0 - Finished processing (I=0, O=0, R=20, W=20, U=0, E=0)
+2020/12/08 14:02:25 - dim_wactivity.0 - Finished processing (I=0, O=21, R=21, W=21, U=0, E=0)
+2020/12/08 14:02:25 - disc - Starting entry [Dim Study]
+2020/12/08 14:02:25 - Dim Study - Using run configuration [Pentaho local]
+2020/12/08 14:02:25 - Dim Study - Using legacy execution engine
+2020/12/08 14:02:25 - dim_study_level - Dispatching started for transformation [dim_study_level]
+Tue Dec 08 14:02:25 UTC 2020 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+2020/12/08 14:02:25 - dim_wactivity.0 - Connected to database [dm] (commit=1000)
+2020/12/08 14:02:25 - Generate rows.0 - Finished processing (I=0, O=0, R=0, W=1, U=0, E=0)
+2020/12/08 14:02:25 - Study Level.0 - Finished reading query, closing connection.
+2020/12/08 14:02:25 - Study Level.0 - Finished processing (I=7, O=0, R=0, W=7, U=0, E=0)
+2020/12/08 14:02:25 - Replace in string.0 - Finished processing (I=0, O=0, R=7, W=7, U=0, E=0)
+2020/12/08 14:02:25 - String operations.0 - Finished processing (I=0, O=0, R=7, W=7, U=0, E=0)
+2020/12/08 14:02:25 - Select values.0 - Finished processing (I=0, O=0, R=7, W=7, U=0, E=0)
+2020/12/08 14:02:25 - dim_wactivity.0 - Finished processing (I=0, O=8, R=8, W=8, U=0, E=0)
+2020/12/08 14:02:25 - disc - Starting entry [Dim Age]
+2020/12/08 14:02:25 - Dim Age - Using run configuration [Pentaho local]
+2020/12/08 14:02:25 - Dim Age - Using legacy execution engine
+2020/12/08 14:02:25 - dim_age - Dispatching started for transformation [dim_age]
+2020/12/08 14:02:25 - dim_wactivity.0 - Connected to database [dm] (commit=1000)
+2020/12/08 14:02:25 - Data grid.0 - Finished processing (I=0, O=0, R=0, W=7, U=0, E=0)
+2020/12/08 14:02:25 - dim_wactivity.0 - Finished processing (I=0, O=7, R=7, W=7, U=0, E=0)
+2020/12/08 14:02:25 - disc - Starting entry [Dim Account]
+2020/12/08 14:02:25 - Dim Account - Using run configuration [Pentaho local]
+2020/12/08 14:02:25 - Dim Account - Using legacy execution engine
+2020/12/08 14:02:25 - dim_account - Dispatching started for transformation [dim_account]
+Tue Dec 08 14:02:25 UTC 2020 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+2020/12/08 14:02:25 - dim Account.0 - Connected to database [dm] (commit=1000)
+2020/12/08 14:02:26 - Table input.0 - Finished reading query, closing connection.
+2020/12/08 14:02:26 - Table input.0 - Finished processing (I=1060, O=0, R=0, W=1060, U=0, E=0)
+2020/12/08 14:02:26 - Select values.0 - Finished processing (I=0, O=0, R=1060, W=1060, U=0, E=0)
+Dec 08, 2020 2:02:26 PM org.apache.cxf.endpoint.ServerImpl initDestination
+INFO: Setting the server's publish address to be /marketplace
+2020/12/08 14:02:26 - dim Account.0 - Finished processing (I=0, O=1060, R=1060, W=1060, U=0, E=0)
+2020/12/08 14:02:26 - disc - Starting entry [Dim Activity]
+2020/12/08 14:02:26 - Dim Activity - Using run configuration [Pentaho local]
+2020/12/08 14:02:26 - Dim Activity - Using legacy execution engine
+2020/12/08 14:02:26 - dim_wactivity - Dispatching started for transformation [dim_wactivity]
+Tue Dec 08 14:02:26 UTC 2020 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Dec 08 14:02:26 UTC 2020 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+2020/12/08 14:02:26 - dim Disc.0 - Connected to database [dm] (commit=1000)
+2020/12/08 14:02:26 - dim_wactivity.0 - Connected to database [dm] (commit=1000)
+2020/12/08 14:02:26 - Work Activity.0 - Finished reading query, closing connection.
+2020/12/08 14:02:26 - Generate rows.0 - Finished processing (I=0, O=0, R=0, W=1, U=0, E=0)
+2020/12/08 14:02:26 - Work Activity.0 - Finished processing (I=13, O=0, R=0, W=13, U=0, E=0)
+2020/12/08 14:02:26 - Replace in string.0 - Finished processing (I=0, O=0, R=13, W=13, U=0, E=0)
+2020/12/08 14:02:26 - Disc.0 - Finished reading query, closing connection.
+2020/12/08 14:02:26 - Disc.0 - Finished processing (I=5, O=0, R=0, W=5, U=0, E=0)
+2020/12/08 14:02:26 - String operations.0 - Finished processing (I=0, O=0, R=13, W=13, U=0, E=0)
+2020/12/08 14:02:26 - Select values.0 - Finished processing (I=0, O=0, R=13, W=13, U=0, E=0)
+2020/12/08 14:02:26 - dim_wactivity.0 - Finished processing (I=0, O=14, R=14, W=14, U=0, E=0)
+2020/12/08 14:02:26 - dim Disc.0 - Finished processing (I=0, O=5, R=5, W=5, U=0, E=0)
+2020/12/08 14:02:26 - Carte - Installing timer to purge stale objects after 1440 minutes.
+2020/12/08 14:02:26 - disc - Starting entry [Actividad >0]
+2020/12/08 14:02:26 - disc - Starting entry [Dim Person]
+2020/12/08 14:02:26 - Dim Person - Using run configuration [Pentaho local]
+2020/12/08 14:02:26 - Dim Person - Using legacy execution engine
+2020/12/08 14:02:26 - dim_person - Dispatching started for transformation [dim_person]
+Tue Dec 08 14:02:26 UTC 2020 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+2020/12/08 14:02:26 - Dim Evaluado.0 - Connected to database [dm] (commit=1000)
+2020/12/08 14:02:26 - Modified JavaScript value.0 - Optimization level set to 9.
+2020/12/08 14:02:27 - Table input.0 - Finished reading query, closing connection.
+2020/12/08 14:02:27 - Table input.0 - Finished processing (I=42111, O=0, R=0, W=42111, U=0, E=0)
+2020/12/08 14:02:27 - Select values.0 - Finished processing (I=0, O=0, R=42111, W=42111, U=0, E=0)
+2020/12/08 14:02:27 - If field value is null.0 - Finished processing (I=0, O=0, R=42111, W=42111, U=0, E=0)
+2020/12/08 14:02:27 - Replace in string.0 - Finished processing (I=0, O=0, R=42111, W=42111, U=0, E=0)
+2020/12/08 14:02:28 - Calculator 2.0 - Finished processing (I=0, O=0, R=42111, W=42111, U=0, E=0)
+2020/12/08 14:02:28 - Modified JavaScript value.0 - Finished processing (I=0, O=0, R=42111, W=42111, U=0, E=0)
+2020/12/08 14:02:29 - Filter rows.0 - Finished processing (I=0, O=0, R=42111, W=40344, U=0, E=0)
+2020/12/08 14:02:31 - Select values 2.0 - Finished processing (I=0, O=0, R=40344, W=40297, U=0, E=47)
+2020/12/08 14:02:31 - error valor.0 - Finished processing (I=0, O=0, R=47, W=47, U=0, E=0)
+2020/12/08 14:02:33 - String operations.0 - Finished processing (I=0, O=0, R=40297, W=40297, U=0, E=0)
+2020/12/08 14:02:35 - Dim Evaluado.0 - Finished processing (I=0, O=40274, R=40297, W=40274, U=0, E=23)
+2020/12/08 14:02:35 - error tabla.0 - Finished processing (I=0, O=0, R=23, W=23, U=0, E=0)
+2020/12/08 14:02:35 - disc - Starting entry [Evaluado >0]
+2020/12/08 14:02:35 - disc - Starting entry [Disc]
+2020/12/08 14:02:35 - Disc - Using run configuration [Pentaho local]
+2020/12/08 14:02:35 - Disc - Using legacy execution engine
+2020/12/08 14:02:35 - fact_disc - Dispatching started for transformation [fact_disc]
+Tue Dec 08 14:02:35 UTC 2020 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+2020/12/08 14:02:35 - Disc.0 - Connected to database [disc] (commit=1000)
+2020/12/08 14:02:36 - ds_evaluation_instance.0 - Finished reading query, closing connection.
+2020/12/08 14:02:36 - ds_evaluation_instance.0 - Finished processing (I=45493, O=0, R=0, W=45493, U=0, E=0)
+2020/12/08 14:02:36 - Create SQL.0 - Optimization level set to 9.
+2020/12/08 14:02:36 - sexo.0 - Optimization level set to 9.
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [63], [15], [5], [68], [68], [4], [252], [20161201], [22], [4], [2], [Female], [2016/12/01 00:00:00.000], [4], [48], [Sector C -> Cumplidor], [Spain], [ES], [Graduate], [College employee], [Artistic recreational], [disc], [41  -  50], [1], [0], [C], [1], [C], [53], [27], [66], [82], [982]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '982' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [16], [3], [49], [49], [3], [259], [20161212], [23], [7], [2], [Female], [2016/12/12 00:00:00.000], [4], [50], [Sector S -> Sereno], [Colombia], [CO], [Technical], [Administrative], [Transport storage], [disc], [21  -  30], [1], [0], [S], [1], [S], [20], [54], [96], [63], [1106]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1106' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [15], [5], [49], [46], [3], [357], [20161212], [24], [8], [2], [Female], [2016/12/12 00:00:00.000], [4], [50], [Sector S -> Sereno], [Chile], [CL], [University], [College employee], [Others], [disc], [41  -  50], [1], [0], [S], [1], [S], [65], [10], [96], [53], [1108]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1108' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [16], [4], [49], [49], [1], [2467], [20161214], [24], [8], [2], [Female], [2016/12/14 00:00:00.000], [4], [50], [Sector D -> Decisivo], [Colombia], [CO], [University], [Administrative], [Others], [disc], [31  -  40], [1], [0], [D], [1], [D], [74], [21], [66], [53], [1145]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1145' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [16], [4], [49], [49], [3], [2466], [20161214], [25], [8], [2], [Male], [2016/12/14 00:00:00.000], [4], [50], [Sector S -> Sereno], [Colombia], [CO], [University], [Administrative], [Manufacturing industry], [disc], [31  -  40], [0], [1], [S], [1], [S], [53], [16], [74], [72], [1146]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1146' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [15], [3], [49], [49], [3], [2122], [20170314], [26], [8], [2], [Female], [2017/03/14 00:00:00.000], [1], [11], [Sector S -> Sereno], [Colombia], [CO], [University], [College employee], [Information communication], [disc], [21  -  30], [1], [0], [S], [1], [S], [20], [54], [100], [56], [1147]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1147' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [15], [4], [49], [49], [3], [1626], [20161214], [25], [8], [2], [Male], [2016/12/14 00:00:00.000], [4], [50], [Sector S -> Sereno], [Colombia], [CO], [University], [College employee], [Manufacturing industry], [disc], [31  -  40], [0], [1], [S], [1], [S], [48], [16], [96], [72], [1148]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1148' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [15], [3], [49], [49], [2], [1516], [20161214], [25], [8], [2], [Male], [2016/12/14 00:00:00.000], [4], [50], [Sector I -> Influyente], [Colombia], [CO], [University], [College employee], [Manufacturing industry], [disc], [21  -  30], [0], [1], [I], [1], [I], [53], [73], [66], [46], [1149]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1149' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [17], [5], [49], [49], [3], [1160], [20170315], [27], [8], [2], [Male], [2017/03/15 00:00:00.000], [1], [11], [Sector S -> Sereno], [Colombia], [CO], [University], [Commercial], [Hostelry], [disc], [41  -  50], [0], [1], [S], [1], [S], [40], [46], [83], [56], [1150]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1150' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [18], [6], [49], [49], [3], [1159], [20161214], [28], [1], [2], [Male], [2016/12/14 00:00:00.000], [4], [50], [Sector S -> Sereno], [Colombia], [CO], [Na], [Na], [Na], [disc], [51  -  60], [0], [1], [S], [1], [S], [38], [37], [83], [63], [1151]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1151' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [17], [4], [49], [49], [3], [912], [20170209], [29], [8], [2], [Male], [2017/02/09 00:00:00.000], [1], [6], [Sector S -> Sereno], [Colombia], [CO], [University], [Commercial], [Trade repairs], [disc], [31  -  40], [0], [1], [S], [1], [S], [56], [37], [57], [53], [1153]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1153' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [17], [4], [49], [49], [3], [703], [20161214], [24], [8], [2], [Male], [2016/12/14 00:00:00.000], [4], [50], [Sector S -> Sereno], [Colombia], [CO], [University], [Commercial], [Others], [disc], [31  -  40], [0], [1], [S], [1], [S], [27], [66], [83], [56], [1154]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1154' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [19], [4], [49], [49], [1], [911], [20170127], [25], [8], [2], [Female], [2017/01/27 00:00:00.000], [1], [4], [Sector D -> Decisivo], [Colombia], [CO], [University], [Executive], [Manufacturing industry], [disc], [31  -  40], [1], [0], [D], [1], [D], [74], [37], [54], [72], [1156]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1156' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [16], [6], [49], [49], [3], [699], [20161214], [25], [8], [2], [Male], [2016/12/14 00:00:00.000], [4], [50], [Sector S -> Sereno], [Colombia], [CO], [University], [Administrative], [Manufacturing industry], [disc], [51  -  60], [0], [1], [S], [1], [S], [65], [16], [74], [56], [1157]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1157' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [18], [3], [49], [49], [2], [468], [20161214], [28], [8], [2], [Male], [2016/12/14 00:00:00.000], [4], [50], [Sector I -> Influyente], [Colombia], [CO], [University], [Na], [Na], [disc], [21  -  30], [0], [1], [I], [1], [I], [30], [84], [74], [63], [1158]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1158' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [16], [3], [49], [49], [3], [467], [20161214], [25], [7], [2], [Female], [2016/12/14 00:00:00.000], [4], [50], [Sector S -> Sereno], [Colombia], [CO], [Technical], [Administrative], [Manufacturing industry], [disc], [21  -  30], [1], [0], [S], [1], [S], [65], [6], [96], [82], [1159]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1159' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [16], [4], [49], [49], [3], [466], [20161214], [30], [8], [2], [Female], [2016/12/14 00:00:00.000], [4], [50], [Sector S -> Sereno], [Colombia], [CO], [University], [Administrative], [Administrative ancillary services], [disc], [31  -  40], [1], [0], [S], [1], [S], [53], [46], [83], [46], [1160]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1160' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [16], [4], [49], [49], [3], [465], [20161214], [25], [8], [2], [Female], [2016/12/14 00:00:00.000], [4], [50], [Sector S -> Sereno], [Colombia], [CO], [University], [Administrative], [Manufacturing industry], [disc], [31  -  40], [1], [0], [S], [1], [S], [53], [46], [96], [46], [1161]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1161' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [20], [6], [49], [49], [3], [464], [20161214], [25], [8], [2], [Male], [2016/12/14 00:00:00.000], [4], [50], [Sector S -> Sereno], [Colombia], [CO], [University], [Middle management], [Manufacturing industry], [disc], [51  -  60], [0], [1], [S], [1], [S], [56], [21], [66], [63], [1162]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1162' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - WARNING: Couldn't insert row into table: [40], [16], [5], [49], [49], [3], [463], [20161214], [25], [8], [2], [Male], [2016/12/14 00:00:00.000], [4], [50], [Sector S -> Sereno], [Colombia], [CO], [University], [Administrative], [Manufacturing industry], [disc], [41  -  50], [0], [1], [S], [1], [S], [38], [73], [83], [53], [1163]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1163' for key 'PRIMARY'
+2020/12/08 14:02:36 - Disc.0 - FINAL WARNING (no more then 20 displayed): Couldn't insert row into table: [40], [16], [4], [49], [49], [3], [462], [20161214], [25], [8], [2], [Male], [2016/12/14 00:00:00.000], [4], [50], [Sector S -> Sereno], [Colombia], [CO], [University], [Administrative], [Manufacturing industry], [disc], [31  -  40], [0], [1], [S], [1], [S], [65], [10], [96], [63], [1164]
+2020/12/08 14:02:36 - Disc.0 - 
+2020/12/08 14:02:36 - Disc.0 - Error inserting/updating row
+2020/12/08 14:02:36 - Disc.0 - Duplicate entry '1164' for key 'PRIMARY'
+2020/12/08 14:02:36 - Select values.0 - Finished processing (I=0, O=0, R=45493, W=45493, U=0, E=0)
+2020/12/08 14:02:36 - Find evsl.0 - Finished processing (I=40274, O=0, R=45493, W=32703, U=0, E=12790)
+2020/12/08 14:02:36 - Dummy (do nothing).0 - Finished processing (I=0, O=0, R=12790, W=12790, U=0, E=0)
+2020/12/08 14:02:37 - If field value is null.0 - Finished processing (I=0, O=0, R=32703, W=32703, U=0, E=0)
+2020/12/08 14:02:37 - Formula.0 - Finished processing (I=0, O=0, R=32703, W=32703, U=0, E=0)
+2020/12/08 14:02:37 - Calculator.0 - Finished processing (I=0, O=0, R=32703, W=32703, U=0, E=0)
+2020/12/08 14:02:37 - Filter rows.0 - Finished processing (I=0, O=0, R=32703, W=32514, U=0, E=0)
+2020/12/08 14:02:37 - Find DISC.0 - Finished processing (I=4, O=0, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:38 - Find Date.0 - Finished processing (I=1114, O=0, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:42 - Find study.0 - Finished processing (I=8, O=0, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:45 - Create SQL.0 - Finished processing (I=0, O=0, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:48 - Dim Age.0 - Finished processing (I=32514, O=0, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:48 - Find country eval.0 - Finished processing (I=101, O=0, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:48 - Find account.0 - Finished processing (I=32514, O=0, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:48 - Find country emp.0 - Finished processing (I=18, O=0, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:48 - Replace in string.0 - Finished processing (I=0, O=0, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:48 - String operations 2.0 - Finished processing (I=0, O=0, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:48 - dim type disc.0 - Finished processing (I=2, O=1, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:48 - dim sector.0 - Finished processing (I=42, O=21, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:48 - Replace in string 2.0 - Finished processing (I=0, O=0, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:48 - String operations 2 2.0 - Finished processing (I=0, O=0, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:48 - dim type disc 2 2.0 - Finished processing (I=28, O=14, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:48 - sexo.0 - Finished processing (I=0, O=0, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:48 - Select values 2.0 - Finished processing (I=0, O=0, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:49 - Disc.0 - Finished processing (I=0, O=32514, R=32514, W=32514, U=0, E=0)
+2020/12/08 14:02:49 - disc - Starting entry [Disc jovenes]
+2020/12/08 14:02:49 - Disc jovenes - Using run configuration [Pentaho local]
+2020/12/08 14:02:49 - Disc jovenes - Using legacy execution engine
+2020/12/08 14:02:49 - disc_jovenes - Dispatching started for transformation [disc_jovenes]
+Tue Dec 08 14:02:49 UTC 2020 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+2020/12/08 14:02:49 - Disc.0 - Connected to database [disc] (commit=1000)
+2020/12/08 14:02:49 - ds_evaluation_instance.0 - Finished reading query, closing connection.
+2020/12/08 14:02:49 - ds_evaluation_instance.0 - Finished processing (I=3221, O=0, R=0, W=3221, U=0, E=0)
+2020/12/08 14:02:49 - Select values.0 - Finished processing (I=0, O=0, R=3221, W=3221, U=0, E=0)
+2020/12/08 14:02:49 - Create SQL.0 - Optimization level set to 9.
+2020/12/08 14:02:49 - Find evsl.0 - Finished processing (I=40274, O=0, R=3221, W=2028, U=0, E=1193)
+2020/12/08 14:02:49 - Dummy (do nothing).0 - Finished processing (I=0, O=0, R=1193, W=1193, U=0, E=0)
+2020/12/08 14:02:49 - If field value is null.0 - Finished processing (I=0, O=0, R=2028, W=2028, U=0, E=0)
+2020/12/08 14:02:49 - sexo.0 - Optimization level set to 9.
+2020/12/08 14:02:49 - Formula.0 - Finished processing (I=0, O=0, R=2028, W=2028, U=0, E=0)
+2020/12/08 14:02:49 - Calculator.0 - Finished processing (I=0, O=0, R=2028, W=2028, U=0, E=0)
+2020/12/08 14:02:49 - Filter rows.0 - Finished processing (I=0, O=0, R=2028, W=2012, U=0, E=0)
+2020/12/08 14:02:49 - Find DISC.0 - Finished processing (I=4, O=0, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:49 - Find Date.0 - Finished processing (I=531, O=0, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:49 - Find study.0 - Finished processing (I=8, O=0, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:49 - Create SQL.0 - Finished processing (I=0, O=0, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:50 - Dim Age.0 - Finished processing (I=2012, O=0, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:50 - Find country eval.0 - Finished processing (I=21, O=0, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:50 - Find account.0 - Finished processing (I=2012, O=0, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:50 - Find country emp.0 - Finished processing (I=13, O=0, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:50 - dim type disc.0 - Finished processing (I=2, O=1, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:50 - Replace in string.0 - Finished processing (I=0, O=0, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:50 - String operations 2.0 - Finished processing (I=0, O=0, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:50 - dim sector.0 - Finished processing (I=17, O=0, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:50 - Replace in string 2.0 - Finished processing (I=0, O=0, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:50 - String operations 2 2.0 - Finished processing (I=0, O=0, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:50 - dim type disc 2 2.0 - Finished processing (I=14, O=0, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:50 - sexo.0 - Finished processing (I=0, O=0, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:50 - Select values 2.0 - Finished processing (I=0, O=0, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:50 - Disc.0 - Finished processing (I=0, O=2012, R=2012, W=2012, U=0, E=0)
+2020/12/08 14:02:50 - disc - Starting entry [Carreras]
+2020/12/08 14:02:50 - Carreras - Using run configuration [Pentaho local]
+2020/12/08 14:02:50 - Carreras - Using legacy execution engine
+2020/12/08 14:02:50 - carrerasBusqueda - Dispatching started for transformation [carrerasBusqueda]
+Tue Dec 08 14:02:51 UTC 2020 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Tue Dec 08 14:02:51 UTC 2020 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+2020/12/08 14:02:51 - Datos Carrera 1.0 - Finished reading query, closing connection.
+2020/12/08 14:02:51 - Datos Carrera 1.0 - Finished processing (I=2110, O=0, R=0, W=2110, U=0, E=0)
+org.pentaho.di.core.exception.KettleDatabaseException: 
+Couldn't get field info from [SELECT * FROM carreras LIMIT 0]
+Table 'dm.carreras' doesn't exist
+	at org.pentaho.di.core.database.Database.getQueryFieldsFallback(Database.java:2583)
+	at org.pentaho.di.core.database.Database.getQueryFields(Database.java:2413)
+	at org.pentaho.di.core.database.Database.getQueryFields(Database.java:1865)
+	at org.pentaho.di.core.database.Database.getTableFields(Database.java:1861)
+	at org.pentaho.di.trans.steps.databaselookup.DatabaseLookup.determineFieldsTypesQueryingDb(DatabaseLookup.java:220)
+	at org.pentaho.di.trans.steps.databaselookup.DatabaseLookup.processRow(DatabaseLookup.java:374)
+	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:62)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'dm.carreras' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3933)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3869)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2524)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2675)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2465)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1912)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2020)
+	at org.pentaho.di.core.database.Database.getQueryFieldsFallback(Database.java:2559)
+	... 7 more
+2020/12/08 14:02:51 - Carrera.0 - ERROR (version 8.3.0.0-371, build 8.3.0.0-371 from 2019-06-11 11.09.08 by buildguy) : Unexpected error
+2020/12/08 14:02:51 - Carrera.0 - ERROR (version 8.3.0.0-371, build 8.3.0.0-371 from 2019-06-11 11.09.08 by buildguy) : org.pentaho.di.core.exception.KettleDatabaseException: 
+2020/12/08 14:02:51 - Carrera.0 - Couldn't get field info from [SELECT * FROM carreras LIMIT 0]
+2020/12/08 14:02:51 - Carrera.0 - 
+2020/12/08 14:02:51 - Carrera.0 - Table 'dm.carreras' doesn't exist
+2020/12/08 14:02:51 - Carrera.0 - 
+2020/12/08 14:02:51 - Carrera.0 - 	at org.pentaho.di.core.database.Database.getQueryFieldsFallback(Database.java:2583)
+2020/12/08 14:02:51 - Carrera.0 - 	at org.pentaho.di.core.database.Database.getQueryFields(Database.java:2413)
+2020/12/08 14:02:51 - Carrera.0 - 	at org.pentaho.di.core.database.Database.getQueryFields(Database.java:1865)
+2020/12/08 14:02:51 - Carrera.0 - 	at org.pentaho.di.core.database.Database.getTableFields(Database.java:1861)
+2020/12/08 14:02:51 - Carrera.0 - 	at org.pentaho.di.trans.steps.databaselookup.DatabaseLookup.determineFieldsTypesQueryingDb(DatabaseLookup.java:220)
+2020/12/08 14:02:51 - Carrera.0 - 	at org.pentaho.di.trans.steps.databaselookup.DatabaseLookup.processRow(DatabaseLookup.java:374)
+2020/12/08 14:02:51 - Carrera.0 - 	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:62)
+2020/12/08 14:02:51 - Carrera.0 - 	at java.lang.Thread.run(Thread.java:748)
+2020/12/08 14:02:51 - Carrera.0 - Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'dm.carreras' doesn't exist
+2020/12/08 14:02:51 - Carrera.0 - 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2020/12/08 14:02:51 - Carrera.0 - 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+2020/12/08 14:02:51 - Carrera.0 - 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2020/12/08 14:02:51 - Carrera.0 - 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2020/12/08 14:02:51 - Carrera.0 - 	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+2020/12/08 14:02:51 - Carrera.0 - 	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+2020/12/08 14:02:51 - Carrera.0 - 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944)
+2020/12/08 14:02:51 - Carrera.0 - 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3933)
+2020/12/08 14:02:51 - Carrera.0 - 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3869)
+2020/12/08 14:02:51 - Carrera.0 - 	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2524)
+2020/12/08 14:02:51 - Carrera.0 - 	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2675)
+2020/12/08 14:02:51 - Carrera.0 - 	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2465)
+2020/12/08 14:02:51 - Carrera.0 - 	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1912)
+2020/12/08 14:02:51 - Carrera.0 - 	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2020)
+2020/12/08 14:02:51 - Carrera.0 - 	at org.pentaho.di.core.database.Database.getQueryFieldsFallback(Database.java:2559)
+2020/12/08 14:02:51 - Carrera.0 - 	... 7 more
+2020/12/08 14:02:51 - carrerasBusqueda - ERROR (version 8.3.0.0-371, build 8.3.0.0-371 from 2019-06-11 11.09.08 by buildguy) : Errors detected!
+2020/12/08 14:02:51 - Merge join.0 - Finished processing (I=0, O=0, R=3448, W=1723, U=0, E=0)
+2020/12/08 14:02:51 - Datos Carrera 2.0 - Finished reading query, closing connection.
+2020/12/08 14:02:51 - Carrera.0 - Finished processing (I=0, O=0, R=1, W=0, U=0, E=1)
+2020/12/08 14:02:51 - carrerasBusqueda - Transformation detected one or more steps with errors.
+2020/12/08 14:02:51 - carrerasBusqueda - Transformation is killing the other steps!
+2020/12/08 14:02:51 - Datos Carrera 2.0 - Finished processing (I=2091, O=0, R=0, W=2089, U=0, E=0)
+2020/12/08 14:02:51 - carrerasBusqueda - ERROR (version 8.3.0.0-371, build 8.3.0.0-371 from 2019-06-11 11.09.08 by buildguy) : Errors detected!
+2020/12/08 14:02:51 - disc - Starting entry [Abort job]
+2020/12/08 14:02:51 - Abort job - ERROR (version 8.3.0.0-371, build 8.3.0.0-371 from 2019-06-11 11.09.08 by buildguy) : Aborting job.
+2020/12/08 14:02:51 - disc - Finished job entry [Abort job] (result=[false])
+2020/12/08 14:02:51 - disc - Finished job entry [Carreras] (result=[false])
+2020/12/08 14:02:51 - disc - Finished job entry [Disc jovenes] (result=[false])
+2020/12/08 14:02:51 - disc - Finished job entry [Disc] (result=[false])
+2020/12/08 14:02:51 - disc - Finished job entry [Evaluado >0] (result=[false])
+2020/12/08 14:02:51 - disc - Finished job entry [Dim Person] (result=[false])
+2020/12/08 14:02:51 - disc - Finished job entry [Actividad >0] (result=[false])
+2020/12/08 14:02:51 - disc - Finished job entry [Dim Activity] (result=[false])
+2020/12/08 14:02:51 - disc - Finished job entry [Dim Account] (result=[false])
+2020/12/08 14:02:51 - disc - Finished job entry [Dim Age] (result=[false])
+2020/12/08 14:02:51 - disc - Finished job entry [Dim Study] (result=[false])
+2020/12/08 14:02:51 - disc - Finished job entry [Dim Sector] (result=[false])
+2020/12/08 14:02:51 - disc - Finished job entry [Clean DB] (result=[false])
+2020/12/08 14:02:51 - disc - Job execution finished
+2020/12/08 14:02:51 - Kitchen - Finished!
+2020/12/08 14:02:51 - Kitchen - ERROR (version 8.3.0.0-371, build 8.3.0.0-371 from 2019-06-11 11.09.08 by buildguy) : Finished with errors
+2020/12/08 14:02:51 - Kitchen - Start=2020/12/08 14:02:19.991, Stop=2020/12/08 14:02:51.367
+2020/12/08 14:02:51 - Kitchen - Processing ended after 31 seconds.
