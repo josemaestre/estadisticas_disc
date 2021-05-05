@@ -789,8 +789,8 @@ FROM evaluacenter.account
       </output>
     </remotesteps>
     <GUI>
-      <xloc>624</xloc>
-      <yloc>80</yloc>
+      <xloc>752</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -808,7 +808,7 @@ FROM evaluacenter.account
     <fields>
       <field>
         <in_stream_name>generalState</in_stream_name>
-        <out_stream_name>generalState_new</out_stream_name>
+        <out_stream_name>generalSate_new1</out_stream_name>
         <use_regex>yes</use_regex>
         <replace_string>[^0-9A-Za-zÁÉÍÓÚáéíóúÑñ ]</replace_string>
         <replace_by_string/>
@@ -829,7 +829,7 @@ FROM evaluacenter.account
     </remotesteps>
     <GUI>
       <xloc>416</xloc>
-      <yloc>96</yloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
