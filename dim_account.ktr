@@ -455,12 +455,20 @@
     <index_tablespace/>
     <attributes>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.rewriteBatchedStatements</code>
-        <attribute>true</attribute>
+        <code>EXTRA_OPTION_MYSQL.UseStreamingResults</code>
+        <attribute>false</attribute>
       </attribute>
       <attribute>
         <code>EXTRA_OPTION_MYSQL.useCompression</code>
         <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
+        <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useSSL</code>
+        <attribute>false</attribute>
       </attribute>
       <attribute>
         <code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code>
@@ -522,12 +530,16 @@
     <index_tablespace/>
     <attributes>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.rewriteBatchedStatements</code>
+        <code>EXTRA_OPTION_MYSQL.useCompression</code>
         <attribute>true</attribute>
       </attribute>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.useCompression</code>
+        <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
         <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useSSL</code>
+        <attribute>false</attribute>
       </attribute>
       <attribute>
         <code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code>
@@ -751,10 +763,6 @@ FROM evaluacenter.account
         <stream_name>generalBusiness</stream_name>
       </field>
       <field>
-        <column_name>generalState</column_name>
-        <stream_name>generalState</stream_name>
-      </field>
-      <field>
         <column_name>generalCity</column_name>
         <stream_name>generalCity</stream_name>
       </field>
@@ -776,8 +784,8 @@ FROM evaluacenter.account
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
-      <yloc>72</yloc>
+      <xloc>528</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
