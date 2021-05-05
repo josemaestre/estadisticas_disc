@@ -2111,7 +2111,7 @@ meta_justicia = s_pragmatico + s_politico  + s_intelectual;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>784</xloc>
+      <xloc>752</xloc>
       <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
