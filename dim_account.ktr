@@ -789,8 +789,8 @@ FROM evaluacenter.account
       </output>
     </remotesteps>
     <GUI>
-      <xloc>752</xloc>
-      <yloc>64</yloc>
+      <xloc>624</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
