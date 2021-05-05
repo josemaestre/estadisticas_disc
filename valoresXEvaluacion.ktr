@@ -1026,7 +1026,7 @@ WHERE evaluation_id IN (${id} ) -- 47440
       </output>
     </remotesteps>
     <GUI>
-      <xloc>960</xloc>
+      <xloc>976</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
