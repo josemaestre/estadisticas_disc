@@ -18,7 +18,6 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`dm_stg` /*!40100 DEFAULT CHARACTER SET 
 
 
 
-
 /*Table structure for table `disc_jovenes_processed` */
 
 DROP TABLE IF EXISTS `disc_jovenes_processed`;
