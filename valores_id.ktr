@@ -557,7 +557,7 @@ FROM
   question_instance q
 WHERE first_answer_id is not null
  
-limit 100</sql>
+limit 5000</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
