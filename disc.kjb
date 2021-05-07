@@ -568,8 +568,8 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1520</xloc>
-      <yloc>192</yloc>
+      <xloc>1504</xloc>
+      <yloc>576</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -949,8 +949,8 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1424</xloc>
-      <yloc>352</yloc>
+      <xloc>1344</xloc>
+      <yloc>544</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
@@ -1158,7 +1158,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <to>Disc jovenes</to>
       <from_nr>1</from_nr>
       <to_nr>2</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
@@ -1185,7 +1185,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <to>Disc Personal</to>
       <from_nr>2</from_nr>
       <to_nr>1</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
@@ -1194,7 +1194,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <to>Carreras</to>
       <from_nr>1</from_nr>
       <to_nr>1</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
@@ -1220,6 +1220,15 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <from>Valores</from>
       <to>Success</to>
       <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Disc</from>
+      <to>Valores</to>
+      <from_nr>1</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
