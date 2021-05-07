@@ -950,7 +950,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1248</xloc>
-      <yloc>608</yloc>
+      <yloc>592</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
