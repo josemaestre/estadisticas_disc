@@ -438,13 +438,13 @@
   </notepads>
   <connection>
     <name>dm_stegin</name>
-    <server>localhost</server>
+    <server>${DM_HOST}</server>
     <type>MYSQL</type>
     <access>Native</access>
     <database>dm_stg</database>
     <port>3306</port>
     <username>${USERDB}</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce109496a290</password>
+    <password>${PASSDB}</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -972,66 +972,6 @@ WHERE evaluation_id IN (${id} ) -- 47440
     </GUI>
   </step>
   <step>
-    <name>valores a STG columna</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>dm_stegin</connection>
-    <schema/>
-    <table>valores</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>N</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>respuesta</column_name>
-        <stream_name>cua</stream_name>
-      </field>
-      <field>
-        <column_name>meta_valor</column_name>
-        <stream_name>meta_valor</stream_name>
-      </field>
-      <field>
-        <column_name>valor</column_name>
-        <stream_name>valor2</stream_name>
-      </field>
-      <field>
-        <column_name>evaluation_id</column_name>
-        <stream_name>evaluation_id</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1008</xloc>
-      <yloc>96</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>Value mapper</name>
     <type>ValueMapper</type>
     <description/>
@@ -1125,6 +1065,66 @@ WHERE evaluation_id IN (${id} ) -- 47440
     <GUI>
       <xloc>96</xloc>
       <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>valores a STG columna</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>dm_stegin</connection>
+    <schema/>
+    <table>valores</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>N</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>respuesta</column_name>
+        <stream_name>cua</stream_name>
+      </field>
+      <field>
+        <column_name>meta_valor</column_name>
+        <stream_name>meta_valor</stream_name>
+      </field>
+      <field>
+        <column_name>valor</column_name>
+        <stream_name>valor2</stream_name>
+      </field>
+      <field>
+        <column_name>evaluation_id</column_name>
+        <stream_name>evaluation_id</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1008</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

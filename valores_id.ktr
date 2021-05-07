@@ -509,7 +509,7 @@
   </connection>
   <order>
     <hop>
-      <from>Table input</from>
+      <from>Obtener los Ids de Evaluacenter</from>
       <to>Copy rows to result</to>
       <enabled>Y</enabled>
     </hop>
@@ -540,7 +540,7 @@
     </GUI>
   </step>
   <step>
-    <name>Table input</name>
+    <name>Obtener los Ids de Evaluacenter</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
