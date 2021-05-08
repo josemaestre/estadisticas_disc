@@ -556,7 +556,7 @@ SELECT evaluation_id as id
 FROM
   question_instance q
 WHERE first_answer_id is not null
- limit 3500</sql>
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -572,7 +572,7 @@ WHERE first_answer_id is not null
     </remotesteps>
     <GUI>
       <xloc>256</xloc>
-      <yloc>128</yloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
