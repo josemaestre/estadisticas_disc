@@ -19,6 +19,8 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`disc` /*!40100 DEFAULT CHARACTER SET la
 DROP TABLE IF EXISTS `valores`;
 
 CREATE TABLE `valores` (
+  `id` int(11) DEFAULT NULL,
+  `evaluation_id` int(11) NOT NULL,
   `genero` char(12) COLLATE latin1_general_ci DEFAULT NULL,
   `date` date DEFAULT NULL,
   `order_age` smallint(6) DEFAULT NULL,
@@ -36,8 +38,6 @@ CREATE TABLE `valores` (
   `week` int(11) DEFAULT NULL,
   `trim` int(11) DEFAULT NULL,
   `gender` char(12) COLLATE latin1_general_ci DEFAULT NULL,
-  `id` int(11) DEFAULT NULL,
-  `evaluation_id` int(11) DEFAULT NULL,
   `s_individualista` int(11) DEFAULT NULL,
   `s_intelectual` int(11) DEFAULT NULL,
   `s_politico` int(11) DEFAULT NULL,
@@ -53,7 +53,8 @@ CREATE TABLE `valores` (
   `meta_justicia` int(11) DEFAULT NULL,
   `factor_valor` int(6) DEFAULT NULL,
   `factor_meta` int(6) DEFAULT NULL,
-  `unidad` int(6) DEFAULT NULL
+  `unidad` int(6) DEFAULT NULL,
+  PRIMARY KEY (`evaluation_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
