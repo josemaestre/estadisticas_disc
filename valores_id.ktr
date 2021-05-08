@@ -571,8 +571,8 @@ WHERE first_answer_id is not null
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
-      <yloc>160</yloc>
+      <xloc>256</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

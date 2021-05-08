@@ -1071,7 +1071,7 @@ SQL = SQL + sqlString;</jsScript_script>
       <schema_name/>
     </partitioning>
     <connection>ds_evaluacenter</connection>
-    <cache>Y</cache>
+    <cache>N</cache>
     <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
@@ -1137,7 +1137,7 @@ SQL = SQL + sqlString;</jsScript_script>
       <schema_name/>
     </partitioning>
     <connection>ds_evaluacenter</connection>
-    <cache>Y</cache>
+    <cache>N</cache>
     <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
@@ -1264,7 +1264,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>Y</cache_load_all>
+    <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
