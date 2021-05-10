@@ -1300,7 +1300,7 @@ SQL = SQL + sqlString;</jsScript_script>
       <value>
         <name>birth_year</name>
         <rename>birth_year</rename>
-        <default/>
+        <default>1900-01-01</default>
         <type>Date</type>
       </value>
       <value>
