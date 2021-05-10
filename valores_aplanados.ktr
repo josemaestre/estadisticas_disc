@@ -1300,7 +1300,7 @@ SQL = SQL + sqlString;</jsScript_script>
       <value>
         <name>birth_year</name>
         <rename>birth_year</rename>
-        <default>1900/01/01</default>
+        <default>2050/01/01 01:01:01</default>
         <type>Date</type>
       </value>
       <value>
@@ -2106,7 +2106,7 @@ meta_justicia = s_pragmatico + s_politico  + s_intelectual;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>752</xloc>
+      <xloc>720</xloc>
       <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
