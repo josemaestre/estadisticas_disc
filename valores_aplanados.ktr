@@ -773,11 +773,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Calculator</from>
-      <to>Filter rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Find study</from>
       <to>Find country eval</to>
       <enabled>Y</enabled>
@@ -785,11 +780,6 @@
     <hop>
       <from>Find country eval</from>
       <to>Dim Age</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter rows</from>
-      <to>Create SQL</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -815,6 +805,11 @@
     <hop>
       <from>sexo</from>
       <to>Valores Aplanados a DM</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Calculator</from>
+      <to>Create SQL</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -1054,8 +1049,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1024</xloc>
-      <yloc>224</yloc>
+      <xloc>480</xloc>
+      <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
