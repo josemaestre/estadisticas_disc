@@ -1300,7 +1300,7 @@ SQL = SQL + sqlString;</jsScript_script>
       <value>
         <name>birth_year</name>
         <rename>birth_year</rename>
-        <default>1900-01-01</default>
+        <default>1900/01/01</default>
         <type>Date</type>
       </value>
       <value>
@@ -1326,7 +1326,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </remotesteps>
     <GUI>
       <xloc>688</xloc>
-      <yloc>224</yloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
