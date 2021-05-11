@@ -467,6 +467,10 @@
         <attribute>true</attribute>
       </attribute>
       <attribute>
+        <code>EXTRA_OPTION_MYSQL.useSSL</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
         <code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code>
         <attribute>false</attribute>
       </attribute>
@@ -534,6 +538,10 @@
         <attribute>true</attribute>
       </attribute>
       <attribute>
+        <code>EXTRA_OPTION_MYSQL.useSSL</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
         <code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code>
         <attribute>false</attribute>
       </attribute>
@@ -596,11 +604,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Modified JavaScript value</from>
-      <to>Filter rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Select values</from>
       <to>If field value is null</to>
       <enabled>Y</enabled>
@@ -628,11 +631,26 @@
     <hop>
       <from>Select values 2</from>
       <to>String operations</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>String operations</from>
+      <to>Microsoft Excel output</to>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>String operations</from>
       <to>Dim Evaluado</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>Modified JavaScript value</from>
+      <to>Sort rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows</from>
+      <to>Filter rows</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -748,7 +766,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>848</xloc>
+      <xloc>1104</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -792,8 +810,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
-      <yloc>144</yloc>
+      <xloc>656</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -877,7 +895,7 @@ include = 'Y';
 anio2 = '--';
 isnum = '--';
 anio = '';
-
+tamano_ano =  0;
 if (len_year &lt;=3 || len_year == 5) {
 	include = 'N';
 }
@@ -910,10 +928,18 @@ else if (len_year == 8  || len_year == 9  || len_year == 7) {
 }
 
 else if (len_year == 10) {
+
+			tamano = birthYear.getString().split('/');
+			
 			anio3 = birthYear.getString().split('/');
 			anio3 = anio3[anio3.length - 1];
-
-			if (substr(birthYear,2,1) == '/') {
+			
+if (tamano[0].length() == 4) 
+			{
+				anio =tamano[0];
+				tamano_ano = 4;}
+ 
+			else if (substr(birthYear,2,1) == '/') {
 				anio  = "01/01/" + anio3;
 			test = 'reeplazado';
 			} else { 
@@ -1006,6 +1032,14 @@ else if (len_year >= 11) {
         <precision>-1</precision>
         <replace>N</replace>
       </field>
+      <field>
+        <name>tamano_ano</name>
+        <rename>tamano_ano</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -1016,8 +1050,8 @@ else if (len_year >= 11) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
-      <yloc>32</yloc>
+      <xloc>448</xloc>
+      <yloc>0</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1116,7 +1150,7 @@ else if (len_year >= 11) {
     </remotesteps>
     <GUI>
       <xloc>288</xloc>
-      <yloc>64</yloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1323,8 +1357,8 @@ else if (len_year >= 11) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>160</xloc>
-      <yloc>48</yloc>
+      <xloc>144</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1538,7 +1572,7 @@ else if (len_year >= 11) {
     </remotesteps>
     <GUI>
       <xloc>592</xloc>
-      <yloc>48</yloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1603,7 +1637,7 @@ else if (len_year >= 11) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
+      <xloc>880</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1644,7 +1678,7 @@ WHERE country &lt;&gt; ''
       </output>
     </remotesteps>
     <GUI>
-      <xloc>112</xloc>
+      <xloc>64</xloc>
       <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1669,7 +1703,7 @@ WHERE country &lt;&gt; ''
       </output>
     </remotesteps>
     <GUI>
-      <xloc>976</xloc>
+      <xloc>1296</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1694,8 +1728,168 @@ WHERE country &lt;&gt; ''
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
-      <yloc>144</yloc>
+      <xloc>736</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Microsoft Excel output</name>
+    <type>ExcelOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <header>Y</header>
+    <footer>N</footer>
+    <encoding/>
+    <append>N</append>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>C:\Users\jgm\Desktop\file.xls</name>
+      <extention>xls</extention>
+      <do_not_open_newfile_init>N</do_not_open_newfile_init>
+      <create_parent_folder>N</create_parent_folder>
+      <split>N</split>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <sheetname>Sheet1</sheetname>
+      <autosizecolums>N</autosizecolums>
+      <nullisblank>N</nullisblank>
+      <protect_sheet>N</protect_sheet>
+      <password>Encrypted </password>
+      <splitevery>0</splitevery>
+      <usetempfiles>N</usetempfiles>
+      <tempdirectory/>
+    </file>
+    <template>
+      <enabled>N</enabled>
+      <append>N</append>
+      <filename>template.xls</filename>
+    </template>
+    <fields>
+      <field>
+        <name>country</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>gender</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>state</name>
+        <type>Integer</type>
+        <format/>
+      </field>
+      <field>
+        <name>studyLevel_id</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>user_id</name>
+        <type>Integer</type>
+        <format/>
+      </field>
+      <field>
+        <name>workActivity_id</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>workSector_id</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>created_at</name>
+        <type>Date</type>
+        <format/>
+      </field>
+      <field>
+        <name>anio</name>
+        <type>Date</type>
+        <format/>
+      </field>
+    </fields>
+    <custom>
+      <header_font_name>arial</header_font_name>
+      <header_font_size>10</header_font_size>
+      <header_font_bold>N</header_font_bold>
+      <header_font_italic>N</header_font_italic>
+      <header_font_underline>no</header_font_underline>
+      <header_font_orientation>horizontal</header_font_orientation>
+      <header_font_color>black</header_font_color>
+      <header_background_color>none</header_background_color>
+      <header_row_height>255</header_row_height>
+      <header_alignment>left</header_alignment>
+      <header_image/>
+      <row_font_name>arial</row_font_name>
+      <row_font_size>10</row_font_size>
+      <row_font_color>black</row_font_color>
+      <row_background_color>none</row_background_color>
+    </custom>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>880</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>anio</name>
+        <ascending>N</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

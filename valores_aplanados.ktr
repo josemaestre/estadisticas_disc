@@ -754,11 +754,11 @@
     </hop>
     <hop>
       <from>Find DISC 2</from>
-      <to>Find evsl</to>
+      <to>Buscar Evaluados</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Find evsl</from>
+      <from>Buscar Evaluados</from>
       <to>If field value is null</to>
       <enabled>Y</enabled>
     </hop>
@@ -809,6 +809,11 @@
     </hop>
     <hop>
       <from>Calculator</from>
+      <to>Filter rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows</from>
       <to>Create SQL</to>
       <enabled>Y</enabled>
     </hop>
@@ -1049,8 +1054,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>480</xloc>
-      <yloc>368</yloc>
+      <xloc>1024</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1247,7 +1252,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </GUI>
   </step>
   <step>
-    <name>Find evsl</name>
+    <name>Buscar Evaluados</name>
     <type>DBLookup</type>
     <description/>
     <distribute>N</distribute>
@@ -1300,7 +1305,7 @@ SQL = SQL + sqlString;</jsScript_script>
       <value>
         <name>birth_year</name>
         <rename>birth_year</rename>
-        <default>2050/01/01 01:01:01</default>
+        <default/>
         <type>Date</type>
       </value>
       <value>
@@ -1326,7 +1331,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </remotesteps>
     <GUI>
       <xloc>688</xloc>
-      <yloc>208</yloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1412,8 +1417,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>848</xloc>
-      <yloc>224</yloc>
+      <xloc>928</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1978,7 +1983,7 @@ meta_justicia = s_pragmatico + s_politico  + s_intelectual;</jsScript_script>
     <schema/>
     <table>valores</table>
     <commit>1000</commit>
-    <truncate>N</truncate>
+    <truncate>Y</truncate>
     <ignore_errors>Y</ignore_errors>
     <use_batch>N</use_batch>
     <specify_fields>Y</specify_fields>
