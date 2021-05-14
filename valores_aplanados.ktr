@@ -820,6 +820,11 @@
     <hop>
       <from>Filter rows</from>
       <to>filtrados</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>Calculator</from>
+      <to>filtrados</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -911,7 +916,7 @@
     <name>Calculator</name>
     <type>Calculator</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
