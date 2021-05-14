@@ -810,12 +810,12 @@
     <hop>
       <from>Calculator</from>
       <to>Filter rows</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Filter rows</from>
       <to>Create SQL</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Filter rows</from>
@@ -825,6 +825,11 @@
     <hop>
       <from>Calculator</from>
       <to>filtrados</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>filtrados</from>
+      <to>Create SQL</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -978,7 +983,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>944</xloc>
+      <xloc>880</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1148,8 +1153,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1024</xloc>
-      <yloc>64</yloc>
+      <xloc>1008</xloc>
+      <yloc>0</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2418,8 +2423,8 @@ if (gender == "m") {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1024</xloc>
-      <yloc>304</yloc>
+      <xloc>1008</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
