@@ -830,7 +830,7 @@
       <schema_name/>
     </partitioning>
     <connection>dm</connection>
-    <cache>Y</cache>
+    <cache>N</cache>
     <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
@@ -1138,8 +1138,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>144</xloc>
-      <yloc>320</yloc>
+      <xloc>576</xloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
