@@ -809,27 +809,12 @@
     </hop>
     <hop>
       <from>Calculator</from>
-      <to>Filter rows</to>
-      <enabled>N</enabled>
-    </hop>
-    <hop>
-      <from>Filter rows</from>
       <to>Create SQL</to>
-      <enabled>N</enabled>
-    </hop>
-    <hop>
-      <from>Filter rows</from>
-      <to>filtrados</to>
-      <enabled>N</enabled>
-    </hop>
-    <hop>
-      <from>Calculator</from>
-      <to>filtrados</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>filtrados</from>
-      <to>Create SQL</to>
+      <from>Valores Aplanados a DM</from>
+      <to>Dummy (do nothing)</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -983,7 +968,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>880</xloc>
+      <xloc>944</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1105,7 +1090,7 @@ SQL = SQL + sqlString;</jsScript_script>
       <schema_name/>
     </partitioning>
     <send_true_to>Create SQL</send_true_to>
-    <send_false_to>filtrados</send_false_to>
+    <send_false_to>Valores Aplanados a DM 2</send_false_to>
     <compare>
       <condition>
         <negated>N</negated>
@@ -1153,8 +1138,8 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1008</xloc>
-      <yloc>0</yloc>
+      <xloc>144</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1978,8 +1963,8 @@ meta_justicia = s_pragmatico + s_politico  + s_intelectual;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1328</xloc>
-      <yloc>528</yloc>
+      <xloc>1152</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2126,8 +2111,8 @@ meta_justicia = s_pragmatico + s_politico  + s_intelectual;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>976</xloc>
-      <yloc>544</yloc>
+      <xloc>880</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2247,14 +2232,14 @@ if (gender == "m") {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1152</xloc>
-      <yloc>544</yloc>
+      <xloc>1008</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>filtrados</name>
-    <type>TableOutput</type>
+    <name>Dummy (do nothing)</name>
+    <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -2263,157 +2248,6 @@ if (gender == "m") {
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>disc</connection>
-    <schema/>
-    <table>valores_filtrados</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>Y</ignore_errors>
-    <use_batch>N</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>evaluation_id</column_name>
-        <stream_name>evaluation_id</stream_name>
-      </field>
-      <field>
-        <column_name>s_individualista</column_name>
-        <stream_name>s_individualista</stream_name>
-      </field>
-      <field>
-        <column_name>s_intelectual</column_name>
-        <stream_name>s_intelectual</stream_name>
-      </field>
-      <field>
-        <column_name>s_politico</column_name>
-        <stream_name>s_politico</stream_name>
-      </field>
-      <field>
-        <column_name>s_regulador</column_name>
-        <stream_name>s_regulador</stream_name>
-      </field>
-      <field>
-        <column_name>s_tradicional</column_name>
-        <stream_name>s_tradicional</stream_name>
-      </field>
-      <field>
-        <column_name>s_utilitario</column_name>
-        <stream_name>s_utilitario</stream_name>
-      </field>
-      <field>
-        <column_name>s_estetico</column_name>
-        <stream_name>s_estetico</stream_name>
-      </field>
-      <field>
-        <column_name>s_social</column_name>
-        <stream_name>s_social</stream_name>
-      </field>
-      <field>
-        <column_name>s_pragmatico</column_name>
-        <stream_name>s_pragmatico</stream_name>
-      </field>
-      <field>
-        <column_name>meta_fidelidad</column_name>
-        <stream_name>meta_fidelidad</stream_name>
-      </field>
-      <field>
-        <column_name>meta_equidad</column_name>
-        <stream_name>meta_equidad</stream_name>
-      </field>
-      <field>
-        <column_name>meta_libertad</column_name>
-        <stream_name>meta_libertad</stream_name>
-      </field>
-      <field>
-        <column_name>meta_justicia</column_name>
-        <stream_name>meta_justicia</stream_name>
-      </field>
-      <field>
-        <column_name>created_at</column_name>
-        <stream_name>created_at</stream_name>
-      </field>
-      <field>
-        <column_name>userAssigned_id</column_name>
-        <stream_name>userAssigned_id</stream_name>
-      </field>
-      <field>
-        <column_name>factorNatural</column_name>
-        <stream_name>factorNatural</stream_name>
-      </field>
-      <field>
-        <column_name>disc_id</column_name>
-        <stream_name>disc_id</stream_name>
-      </field>
-      <field>
-        <column_name>created_at_1</column_name>
-        <stream_name>created_at_1</stream_name>
-      </field>
-      <field>
-        <column_name>userAssigned_id_1</column_name>
-        <stream_name>userAssigned_id_1</stream_name>
-      </field>
-      <field>
-        <column_name>factorNatural_1</column_name>
-        <stream_name>factorNatural_1</stream_name>
-      </field>
-      <field>
-        <column_name>disc_id_1</column_name>
-        <stream_name>disc_id_1</stream_name>
-      </field>
-      <field>
-        <column_name>sk_evaluado</column_name>
-        <stream_name>sk_evaluado</stream_name>
-      </field>
-      <field>
-        <column_name>studyLevel_id</column_name>
-        <stream_name>studyLevel_id</stream_name>
-      </field>
-      <field>
-        <column_name>gender</column_name>
-        <stream_name>gender</stream_name>
-      </field>
-      <field>
-        <column_name>country_eval</column_name>
-        <stream_name>country_eval</stream_name>
-      </field>
-      <field>
-        <column_name>birth_year</column_name>
-        <stream_name>birth_year</stream_name>
-      </field>
-      <field>
-        <column_name>workActivity_id</column_name>
-        <stream_name>workActivity_id</stream_name>
-      </field>
-      <field>
-        <column_name>workSector_id</column_name>
-        <stream_name>workSector_id</stream_name>
-      </field>
-      <field>
-        <column_name>ThisYear</column_name>
-        <stream_name>ThisYear</stream_name>
-      </field>
-      <field>
-        <column_name>kk</column_name>
-        <stream_name>kk</stream_name>
-      </field>
-      <field>
-        <column_name>anoeval</column_name>
-        <stream_name>anoeval</stream_name>
-      </field>
-      <field>
-        <column_name>edad2</column_name>
-        <stream_name>edad2</stream_name>
-      </field>
-    </fields>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -2423,12 +2257,24 @@ if (gender == "m") {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1008</xloc>
-      <yloc>80</yloc>
+      <xloc>896</xloc>
+      <yloc>560</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step_error_handling>
+    <error>
+      <source_step>Valores Aplanados a DM</source_step>
+      <target_step>Dummy (do nothing)</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
