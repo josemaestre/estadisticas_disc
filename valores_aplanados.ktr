@@ -553,6 +553,10 @@
         <attribute>convertToNull</attribute>
       </attribute>
       <attribute>
+        <code>EXTRA_OPTION_MYSQL.zeroDateTimeBehvior</code>
+        <attribute>convertToNull</attribute>
+      </attribute>
+      <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
         <attribute>N</attribute>
       </attribute>
