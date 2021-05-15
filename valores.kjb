@@ -339,16 +339,21 @@
       <run_configuration>Pentaho local</run_configuration>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
+        <parameter>
+          <name>id</name>
+          <stream_name>id</stream_name>
+          <value/>
+        </parameter>
       </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>384</xloc>
+      <xloc>416</xloc>
       <yloc>144</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>General valores</name>
+      <name>Generar  Valores</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -386,23 +391,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>768</xloc>
-      <yloc>144</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>Write to log</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <attributes/>
-      <logmessage>Procesando valores ${id}</logmessage>
-      <loglevel>Rowlevel</loglevel>
-      <logsubject>Procesando Valores</logsubject>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>560</xloc>
-      <yloc>144</yloc>
+      <xloc>720</xloc>
+      <yloc>128</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -455,26 +445,17 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Generar IDs para Valores</from>
-      <to>Write to log</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Write to log</from>
-      <to>General valores</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>General valores</from>
+      <from>Generar  Valores</from>
       <to>Aplanar Valores</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Generar IDs para Valores</from>
+      <to>Generar  Valores</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

@@ -442,7 +442,7 @@
     <type>MYSQL</type>
     <access>Native</access>
     <database>disc</database>
-    <port>3306</port>
+    <port>${DM_HOST_PORT}</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
     <servername/>
@@ -487,7 +487,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>3306</attribute>
+        <attribute>${DM_HOST_PORT}</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -518,44 +518,16 @@
   <connection>
     <name>dm</name>
     <server>${DM_HOST}</server>
-    <type>MYSQL</type>
+    <type>MARIADB</type>
     <access>Native</access>
     <database>dm</database>
-    <port>3306</port>
+    <port>${DM_HOST_PORT}</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute>
-        <code>EXTRA_OPTION_MYSQL.UseStreamingResults</code>
-        <attribute>false</attribute>
-      </attribute>
-      <attribute>
-        <code>EXTRA_OPTION_MYSQL.useCompression</code>
-        <attribute>true</attribute>
-      </attribute>
-      <attribute>
-        <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
-        <attribute>true</attribute>
-      </attribute>
-      <attribute>
-        <code>EXTRA_OPTION_MYSQL.useSSL</code>
-        <attribute>false</attribute>
-      </attribute>
-      <attribute>
-        <code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code>
-        <attribute>false</attribute>
-      </attribute>
-      <attribute>
-        <code>EXTRA_OPTION_MYSQL.zeroDateTimeBehavior</code>
-        <attribute>convertToNull</attribute>
-      </attribute>
-      <attribute>
-        <code>EXTRA_OPTION_MYSQL.zeroDateTimeBehvior</code>
-        <attribute>convertToNull</attribute>
-      </attribute>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
         <attribute>N</attribute>
@@ -570,7 +542,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>3306</attribute>
+        <attribute>${DM_HOST_PORT}</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -579,10 +551,6 @@
       <attribute>
         <code>QUOTE_ALL_FIELDS</code>
         <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>STREAM_RESULTS</code>
-        <attribute>Y</attribute>
       </attribute>
       <attribute>
         <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
@@ -604,7 +572,7 @@
     <type>MYSQL</type>
     <access>Native</access>
     <database>dm_stg</database>
-    <port>3306</port>
+    <port>${DM_HOST_PORT}</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
     <servername/>
@@ -625,7 +593,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>3306</attribute>
+        <attribute>${DM_HOST_PORT}</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -656,7 +624,7 @@
   <connection>
     <name>ds_evaluacenter</name>
     <server>${SC_HOST}</server>
-    <type>MYSQL</type>
+    <type>MARIADB</type>
     <access>Native</access>
     <database>evaluacenter</database>
     <port>3306</port>
@@ -666,22 +634,6 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute>
-        <code>EXTRA_OPTION_MYSQL.useCompression</code>
-        <attribute>true</attribute>
-      </attribute>
-      <attribute>
-        <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
-        <attribute>true</attribute>
-      </attribute>
-      <attribute>
-        <code>EXTRA_OPTION_MYSQL.useSSL</code>
-        <attribute>false</attribute>
-      </attribute>
-      <attribute>
-        <code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code>
-        <attribute>false</attribute>
-      </attribute>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
         <attribute>N</attribute>
@@ -705,10 +657,6 @@
       <attribute>
         <code>QUOTE_ALL_FIELDS</code>
         <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>STREAM_RESULTS</code>
-        <attribute>Y</attribute>
       </attribute>
       <attribute>
         <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
@@ -1088,6 +1036,31 @@ SQL = SQL + sqlString;</jsScript_script>
     <GUI>
       <xloc>1328</xloc>
       <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Dummy (do nothing)</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>896</xloc>
+      <yloc>608</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2247,31 +2220,6 @@ if (gender == "m") {
     <GUI>
       <xloc>1008</xloc>
       <yloc>400</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Dummy (do nothing)</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>896</xloc>
-      <yloc>608</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
