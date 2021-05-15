@@ -439,7 +439,7 @@
   <connection>
     <name>dm_stegin</name>
     <server>${DM_HOST}</server>
-    <type>MYSQL</type>
+    <type>MARIADB</type>
     <access>Native</access>
     <database>dm_stg</database>
     <port>${DM_HOST_PORT}</port>
@@ -472,10 +472,6 @@
       <attribute>
         <code>QUOTE_ALL_FIELDS</code>
         <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>STREAM_RESULTS</code>
-        <attribute>Y</attribute>
       </attribute>
       <attribute>
         <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
@@ -708,7 +704,7 @@ WHERE evaluation_id IN (${id} ) -- 47440
     </remotesteps>
     <GUI>
       <xloc>96</xloc>
-      <yloc>528</yloc>
+      <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
