@@ -12,7 +12,7 @@
   <modified_date>2020/08/10 19:07:35.188</modified_date>
   <parameters>
     <parameter>
-      <name>evaluacion</name>
+      <name>id</name>
       <default_value/>
       <description/>
     </parameter>
@@ -350,8 +350,8 @@
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
         <parameter>
-          <name>evaluacion</name>
-          <stream_name/>
+          <name>id</name>
+          <stream_name>id</stream_name>
           <value/>
         </parameter>
         <parameter>

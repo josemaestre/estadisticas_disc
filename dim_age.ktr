@@ -438,10 +438,10 @@
   <connection>
     <name>dm</name>
     <server>${DM_HOST}</server>
-    <type>MYSQL</type>
+    <type>MARIADB</type>
     <access>Native</access>
     <database>dm</database>
-    <port>3306</port>
+    <port>${DM_HOST_PORT}</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
     <servername/>
@@ -449,16 +449,20 @@
     <index_tablespace/>
     <attributes>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.rewriteBatchedStatements</code>
+        <code>EXTRA_OPTION_MARIADB.useCompression</code>
         <attribute>true</attribute>
       </attribute>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.useCompression</code>
+        <code>EXTRA_OPTION_MARIADB.useCursorFetch </code>
         <attribute>true</attribute>
       </attribute>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code>
+        <code>EXTRA_OPTION_MARIADB.useServerPrepStmts</code>
         <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MARIADB.zeroDateTimeBehavior</code>
+        <attribute>convertToNull</attribute>
       </attribute>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
@@ -474,7 +478,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>3306</attribute>
+        <attribute>${DM_HOST_PORT}</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -483,10 +487,6 @@
       <attribute>
         <code>QUOTE_ALL_FIELDS</code>
         <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>STREAM_RESULTS</code>
-        <attribute>Y</attribute>
       </attribute>
       <attribute>
         <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>

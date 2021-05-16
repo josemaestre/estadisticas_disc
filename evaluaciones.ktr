@@ -476,6 +476,22 @@
     <index_tablespace/>
     <attributes>
       <attribute>
+        <code>EXTRA_OPTION_MARIADB.useCompression </code>
+        <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MARIADB.useCursorFetch </code>
+        <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MARIADB.useServerPrepStmts </code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MARIADB.zeroDateTimeBehavior</code>
+        <attribute>convertToNull</attribute>
+      </attribute>
+      <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
         <attribute>N</attribute>
       </attribute>
@@ -515,11 +531,6 @@
   </connection>
   <order>
     <hop>
-      <from>Modified JavaScript value</from>
-      <to>Dynamic SQL row</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Get rows from result</from>
       <to>Get variables</to>
       <enabled>Y</enabled>
@@ -549,6 +560,16 @@
       <to>Modified JavaScript value</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Modified JavaScript value</from>
+      <to>Write to log 3 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Write to log 3 2 2</from>
+      <to>Dynamic SQL row</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>Calcular DISC Adapatado</name>
@@ -576,8 +597,8 @@
         <input/>
       </variablemapping>
       <variablemapping>
-        <variable>evaluacion</variable>
-        <field>evaluacion</field>
+        <variable>id</variable>
+        <field>id</field>
         <input/>
       </variablemapping>
       <inherit_all_vars>Y</inherit_all_vars>
@@ -652,7 +673,7 @@
     </partitioning>
     <connection>disc</connection>
     <rowlimit>0</rowlimit>
-    <sql>SELECT id as evaluacion
+    <sql>SELECT id 
  FROM disc WHERE factor_adaptado IS null limit 1</sql>
     <outer_join>N</outer_join>
     <replace_vars>N</replace_vars>
@@ -764,10 +785,10 @@
         <jsScript_script>//Script here
 java;
 
-query= "SELECT id as evaluacion  FROM "  + tabla_1 + " WHERE factor_adaptado IS NULL " ;
+query= "SELECT id   FROM "  + tabla_1 + " WHERE factor_adaptado IS NULL " ;
 //query= "SELECT id as evaluacion  FROM disc WHERE factor_adaptado IS NULL " ;
 
-</jsScript_script>
+Alert(query);</jsScript_script>
       </jsScript>
     </jsScripts>
     <fields>
@@ -905,6 +926,42 @@ query= "SELECT id as evaluacion  FROM "  + tabla_1 + " WHERE factor_adaptado IS 
     <GUI>
       <xloc>800</xloc>
       <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Write to log 3 2 2</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <loglevel>log_level_detailed</loglevel>
+    <displayHeader>Y</displayHeader>
+    <limitRows>N</limitRows>
+    <limitRowsNumber>0</limitRowsNumber>
+    <logmessage>-----------------------query 2-----------
+----------------------------------------</logmessage>
+    <fields>
+      <field>
+        <name>query</name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

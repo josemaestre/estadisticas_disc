@@ -444,10 +444,10 @@
   <connection>
     <name>dm</name>
     <server>${DM_HOST}</server>
-    <type>MYSQL</type>
+    <type>MARIADB</type>
     <access>Native</access>
     <database>dm</database>
-    <port>3306</port>
+    <port>${DM_HOST_PORT}</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
     <servername/>
@@ -455,24 +455,20 @@
     <index_tablespace/>
     <attributes>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.UseStreamingResults</code>
-        <attribute>false</attribute>
-      </attribute>
-      <attribute>
-        <code>EXTRA_OPTION_MYSQL.useCompression</code>
+        <code>EXTRA_OPTION_MARIADB.useCompression </code>
         <attribute>true</attribute>
       </attribute>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
+        <code>EXTRA_OPTION_MARIADB.useCursorFetch </code>
         <attribute>true</attribute>
       </attribute>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.useSSL</code>
+        <code>EXTRA_OPTION_MARIADB.useServerPrepStmts</code>
         <attribute>false</attribute>
       </attribute>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code>
-        <attribute>false</attribute>
+        <code>EXTRA_OPTION_MARIADB.zeroDateTimeBehavior</code>
+        <attribute>convertToNull</attribute>
       </attribute>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
@@ -488,7 +484,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>3306</attribute>
+        <attribute>${DM_HOST_PORT}</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -497,10 +493,6 @@
       <attribute>
         <code>QUOTE_ALL_FIELDS</code>
         <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>STREAM_RESULTS</code>
-        <attribute>Y</attribute>
       </attribute>
       <attribute>
         <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
@@ -519,7 +511,7 @@
   <connection>
     <name>ds_evaluacenter</name>
     <server>${SC_HOST}</server>
-    <type>MYSQL</type>
+    <type>MARIADB</type>
     <access>Native</access>
     <database>evaluacenter</database>
     <port>3306</port>
@@ -530,20 +522,20 @@
     <index_tablespace/>
     <attributes>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.useCompression</code>
+        <code>EXTRA_OPTION_MARIADB.useCompression </code>
         <attribute>true</attribute>
       </attribute>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
+        <code>EXTRA_OPTION_MARIADB.useCursorFetch </code>
         <attribute>true</attribute>
       </attribute>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.useSSL</code>
+        <code>EXTRA_OPTION_MARIADB.useServerPrepStmts </code>
         <attribute>false</attribute>
       </attribute>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code>
-        <attribute>false</attribute>
+        <code>EXTRA_OPTION_MARIADB.zeroDateTimeBehavior</code>
+        <attribute>convertToNull</attribute>
       </attribute>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
@@ -568,10 +560,6 @@
       <attribute>
         <code>QUOTE_ALL_FIELDS</code>
         <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>STREAM_RESULTS</code>
-        <attribute>Y</attribute>
       </attribute>
       <attribute>
         <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
@@ -604,6 +592,45 @@
       <enabled>Y</enabled>
     </hop>
   </order>
+  <step>
+    <name>Replace in string</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>generalState</in_stream_name>
+        <out_stream_name>generalState_new</out_stream_name>
+        <use_regex>yes</use_regex>
+        <replace_string>[^0-9A-Za-zÁÉÍÓÚáéíóúÑñ ]</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Select values</name>
     <type>SelectValues</type>
@@ -790,45 +817,6 @@ FROM evaluacenter.account
     </remotesteps>
     <GUI>
       <xloc>656</xloc>
-      <yloc>80</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Replace in string</name>
-    <type>ReplaceString</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <in_stream_name>generalState</in_stream_name>
-        <out_stream_name>generalState_new</out_stream_name>
-        <use_regex>yes</use_regex>
-        <replace_string>[^0-9A-Za-zÁÉÍÓÚáéíóúÑñ ]</replace_string>
-        <replace_by_string/>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-        <is_unicode>no</is_unicode>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>416</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
