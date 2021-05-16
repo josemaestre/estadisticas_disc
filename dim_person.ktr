@@ -444,60 +444,9 @@
   <connection>
     <name>dm</name>
     <server>${DM_HOST}</server>
-    <type>MARIADB</type>
+    <type>MYSQL</type>
     <access>Native</access>
     <database>dm</database>
-    <port>${DM_HOST_PORT}</port>
-    <username>${USERDB}</username>
-    <password>${PASSDB}</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>${DM_HOST_PORT}</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>ds_evaluacenter</name>
-    <server>${SC_HOST}</server>
-    <type>MARIADB</type>
-    <access>Native</access>
-    <database>evaluacenter</database>
     <port>3306</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
@@ -505,6 +454,26 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.UseStreamingResults</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useCompression</code>
+        <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
+        <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useSSL</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code>
+        <attribute>false</attribute>
+      </attribute>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
         <attribute>N</attribute>
@@ -528,6 +497,81 @@
       <attribute>
         <code>QUOTE_ALL_FIELDS</code>
         <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>STREAM_RESULTS</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>ds_evaluacenter</name>
+    <server>${SC_HOST}</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>evaluacenter</database>
+    <port>3306</port>
+    <username>${USERDB}</username>
+    <password>${PASSDB}</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useCompression</code>
+        <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
+        <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useSSL</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>3306</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>STREAM_RESULTS</code>
+        <attribute>Y</attribute>
       </attribute>
       <attribute>
         <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
@@ -555,8 +599,13 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Users</from>
+      <from>Table input</from>
       <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Modified JavaScript value</from>
+      <to>Filter rows</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -587,31 +636,6 @@
     <hop>
       <from>Select values 2</from>
       <to>String operations</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter rows</from>
-      <to>error valor 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Modified JavaScript value</from>
-      <to>Filter rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>String operations</from>
-      <to>Filter rows 2</to>
-      <enabled>N</enabled>
-    </hop>
-    <hop>
-      <from>Filter rows 2</from>
-      <to>Dim Evaluado</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter rows 2</from>
-      <to>Dummy (do nothing)</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -677,8 +701,8 @@
     <table>dim_evaluado</table>
     <commit>1000</commit>
     <truncate>N</truncate>
-    <ignore_errors>Y</ignore_errors>
-    <use_batch>N</use_batch>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
@@ -732,58 +756,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1376</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Dummy (do nothing)</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1216</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Dummy (do nothing) 3</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>448</xloc>
-      <yloc>240</yloc>
+      <xloc>848</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -799,7 +773,7 @@
       <schema_name/>
     </partitioning>
     <send_true_to>Select values 2</send_true_to>
-    <send_false_to>error valor 2</send_false_to>
+    <send_false_to/>
     <compare>
       <condition>
         <negated>N</negated>
@@ -826,73 +800,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>592</xloc>
+      <xloc>512</xloc>
       <yloc>144</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Filter rows 2</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <send_true_to>Dim Evaluado</send_true_to>
-    <send_false_to>Dummy (do nothing)</send_false_to>
-    <compare>
-      <condition>
-        <negated>N</negated>
-        <conditions>
-          <condition>
-            <negated>N</negated>
-            <leftvalue>anio</leftvalue>
-            <function>&lt;</function>
-            <rightvalue/>
-            <value>
-              <name>constant</name>
-              <type>Date</type>
-              <text>1900/01/01 00:00:00.000</text>
-              <length>-1</length>
-              <precision>-1</precision>
-              <isnull>N</isnull>
-              <mask>MM/dd/yyyy</mask>
-            </value>
-          </condition>
-          <condition>
-            <negated>N</negated>
-            <operator>OR</operator>
-            <leftvalue>anio</leftvalue>
-            <function>&gt;=</function>
-            <rightvalue/>
-            <value>
-              <name>constant</name>
-              <type>Date</type>
-              <text>1998/01/01 00:00:00.000</text>
-              <length>-1</length>
-              <precision>-1</precision>
-              <isnull>N</isnull>
-              <mask>MM/dd/yyyy</mask>
-            </value>
-          </condition>
-        </conditions>
-      </condition>
-    </compare>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1184</xloc>
-      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -976,7 +885,7 @@ include = 'Y';
 anio2 = '--';
 isnum = '--';
 anio = '';
-tamano_ano =  0;
+
 if (len_year &lt;=3 || len_year == 5) {
 	include = 'N';
 }
@@ -1009,20 +918,10 @@ else if (len_year == 8  || len_year == 9  || len_year == 7) {
 }
 
 else if (len_year == 10) {
-
-			tamano = birthYear.getString().split('/');
-			
 			anio3 = birthYear.getString().split('/');
 			anio3 = anio3[anio3.length - 1];
-			include = "Y";
 
-			
-if (tamano[0].length() == 4) 
-			{
-				anio =tamano[0];
-				tamano_ano = 4;}
- 
-			else if (substr(birthYear,2,1) == '/') {
+			if (substr(birthYear,2,1) == '/') {
 				anio  = "01/01/" + anio3;
 			test = 'reeplazado';
 			} else { 
@@ -1115,14 +1014,6 @@ else if (len_year >= 11) {
         <precision>-1</precision>
         <replace>N</replace>
       </field>
-      <field>
-        <name>tamano_ano</name>
-        <rename>tamano_ano</rename>
-        <type>Integer</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -1133,7 +1024,7 @@ else if (len_year >= 11) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>448</xloc>
+      <xloc>432</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1233,7 +1124,7 @@ else if (len_year >= 11) {
     </remotesteps>
     <GUI>
       <xloc>288</xloc>
-      <yloc>32</yloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1440,8 +1331,8 @@ else if (len_year >= 11) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>144</xloc>
-      <yloc>32</yloc>
+      <xloc>160</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1654,8 +1545,8 @@ else if (len_year >= 11) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>752</xloc>
-      <yloc>144</yloc>
+      <xloc>592</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1720,13 +1611,13 @@ else if (len_year >= 11) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>944</xloc>
-      <yloc>64</yloc>
+      <xloc>720</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Users</name>
+    <name>Table input</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1761,7 +1652,7 @@ WHERE country &lt;&gt; ''
       </output>
     </remotesteps>
     <GUI>
-      <xloc>64</xloc>
+      <xloc>112</xloc>
       <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1786,8 +1677,8 @@ WHERE country &lt;&gt; ''
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1472</xloc>
-      <yloc>16</yloc>
+      <xloc>976</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1811,33 +1702,8 @@ WHERE country &lt;&gt; ''
       </output>
     </remotesteps>
     <GUI>
-      <xloc>976</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>error valor 2</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>736</xloc>
-      <yloc>400</yloc>
+      <xloc>656</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1845,7 +1711,7 @@ WHERE country &lt;&gt; ''
     <error>
       <source_step>Dim Evaluado</source_step>
       <target_step>error tabla</target_step>
-      <is_enabled>N</is_enabled>
+      <is_enabled>Y</is_enabled>
       <nr_valuename/>
       <descriptions_valuename/>
       <fields_valuename/>
