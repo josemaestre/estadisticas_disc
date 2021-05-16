@@ -533,7 +533,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>48</xloc>
-      <yloc>336</yloc>
+      <yloc>352</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -544,8 +544,8 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1520</xloc>
-      <yloc>160</yloc>
+      <xloc>1552</xloc>
+      <yloc>176</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -774,7 +774,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1520</xloc>
+      <xloc>1552</xloc>
       <yloc>352</yloc>
       <attributes_kjc/>
     </entry>
@@ -925,8 +925,8 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1392</xloc>
-      <yloc>160</yloc>
+      <xloc>1440</xloc>
+      <yloc>352</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
