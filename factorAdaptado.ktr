@@ -444,10 +444,10 @@
   <connection>
     <name>disc</name>
     <server>${DM_HOST}</server>
-    <type>MYSQL</type>
+    <type>MARIADB</type>
     <access>Native</access>
     <database>disc</database>
-    <port>${DM_HOST_PORT}</port>
+    <port>3306</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
     <servername/>
@@ -455,28 +455,20 @@
     <index_tablespace/>
     <attributes>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.UseStreamingResults</code>
-        <attribute>false</attribute>
-      </attribute>
-      <attribute>
-        <code>EXTRA_OPTION_MYSQL.defaultFetchSize</code>
-        <attribute>10000</attribute>
-      </attribute>
-      <attribute>
-        <code>EXTRA_OPTION_MYSQL.useCompression</code>
+        <code>EXTRA_OPTION_MARIADB.useCompression </code>
         <attribute>true</attribute>
       </attribute>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
+        <code>EXTRA_OPTION_MARIADB.useCursorFetch </code>
         <attribute>true</attribute>
       </attribute>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.useSSL</code>
+        <code>EXTRA_OPTION_MARIADB.useServerPrepStmts </code>
         <attribute>false</attribute>
       </attribute>
       <attribute>
-        <code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code>
-        <attribute>false</attribute>
+        <code>EXTRA_OPTION_MARIADB.zeroDateTimeBehavior</code>
+        <attribute>convertToNull</attribute>
       </attribute>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
@@ -492,7 +484,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>${DM_HOST_PORT}</attribute>
+        <attribute>3306</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -501,10 +493,6 @@
       <attribute>
         <code>QUOTE_ALL_FIELDS</code>
         <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>STREAM_RESULTS</code>
-        <attribute>Y</attribute>
       </attribute>
       <attribute>
         <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
@@ -534,7 +522,7 @@
     <index_tablespace/>
     <attributes>
       <attribute>
-        <code>EXTRA_OPTION_MARIADB.useCompression</code>
+        <code>EXTRA_OPTION_MARIADB.useCompression </code>
         <attribute>true</attribute>
       </attribute>
       <attribute>
@@ -542,7 +530,7 @@
         <attribute>true</attribute>
       </attribute>
       <attribute>
-        <code>EXTRA_OPTION_MARIADB.useServerPrepStmts</code>
+        <code>EXTRA_OPTION_MARIADB.useServerPrepStmts </code>
         <attribute>false</attribute>
       </attribute>
       <attribute>
@@ -1750,7 +1738,7 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
     </remotesteps>
     <GUI>
       <xloc>1360</xloc>
-      <yloc>448</yloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

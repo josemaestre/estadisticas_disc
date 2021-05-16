@@ -442,7 +442,7 @@
     <type>MARIADB</type>
     <access>Native</access>
     <database>disc</database>
-    <port>${DM_HOST_PORT}</port>
+    <port>3306</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
     <servername/>
@@ -479,7 +479,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>${DM_HOST_PORT}</attribute>
+        <attribute>3306</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
