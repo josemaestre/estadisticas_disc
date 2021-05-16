@@ -450,8 +450,8 @@
     <index_tablespace/>
     <attributes>
       <attribute>
-        <code>EXTRA_OPTION_MARIADB.useCompression</code>
-        <attribute>false</attribute>
+        <code>EXTRA_OPTION_MARIADB.useCompression </code>
+        <attribute>true</attribute>
       </attribute>
       <attribute>
         <code>EXTRA_OPTION_MARIADB.useCursorFetch </code>
