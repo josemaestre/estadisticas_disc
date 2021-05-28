@@ -623,7 +623,7 @@
   id
 , letter as name
 , description
-FROM evaluacenter.evaluationdisc_sector
+FROM evaluationdisc_sector
 </sql>
     <limit>0</limit>
     <lookup/>
