@@ -89,7 +89,7 @@
     <server>${DM_HOST}</server>
     <type>MARIADB</type>
     <access>Native</access>
-    <database>dm1</database>
+    <database>dm</database>
     <port>${DM_HOST_PORT}</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
