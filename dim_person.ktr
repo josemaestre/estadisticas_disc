@@ -513,7 +513,7 @@
     <server>${SC_HOST}</server>
     <type>MARIADB</type>
     <access>Native</access>
-    <database>evaluacenter</database>
+    <database>${SC_HOST_DB_NAME}</database>
     <port>3306</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
