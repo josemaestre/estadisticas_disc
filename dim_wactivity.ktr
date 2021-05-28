@@ -829,7 +829,7 @@ FROM evaluacenter.evaluationdisc_sector
     <sql>SELECT
   id name
  
-FROM evaluacenter.work_activity
+FROM work_activity
 </sql>
     <limit>0</limit>
     <lookup/>
