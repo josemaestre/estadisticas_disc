@@ -782,7 +782,7 @@
     <sql>SELECT
   id name
  
-FROM evaluacenter.work_sector
+FROM work_sector
 </sql>
     <limit>0</limit>
     <lookup/>

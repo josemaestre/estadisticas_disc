@@ -772,7 +772,7 @@
     <sql>SELECT
   id name
  
-FROM evaluacenter.study_level
+FROM study_level
 </sql>
     <limit>0</limit>
     <lookup/>

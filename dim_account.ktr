@@ -724,7 +724,7 @@
 , accountPlan_id
 , specialCoin_id
 , paymentInConfiguration_id
-FROM evaluacenter.account
+FROM account
 </sql>
     <limit>0</limit>
     <lookup/>
