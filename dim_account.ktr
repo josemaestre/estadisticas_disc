@@ -816,7 +816,7 @@ FROM account
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
+      <xloc>672</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>

@@ -623,7 +623,7 @@
   id
 , letter as name
 , description
-FROM evaluationdisc_sector
+FROM epp3.evaluationdisc_sector
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -829,7 +829,7 @@ FROM evaluationdisc_sector
     <sql>SELECT
   id name
  
-FROM work_activity
+FROM epp3.work_activity
 </sql>
     <limit>0</limit>
     <lookup/>
