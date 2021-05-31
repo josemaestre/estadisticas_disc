@@ -551,7 +551,7 @@
 SELECT evaluation_id as id
 FROM  question_instance q
 WHERE first_answer_id is not null
-limit 10</sql>
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

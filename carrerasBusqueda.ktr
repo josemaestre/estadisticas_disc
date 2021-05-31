@@ -911,7 +911,7 @@ order by 1</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>160</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>

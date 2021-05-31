@@ -587,23 +587,8 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Table input</from>
-      <to>Select values</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Modified JavaScript value</from>
-      <to>Filter rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Select values</from>
       <to>If field value is null</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>If field value is null</from>
-      <to>Replace in string</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -619,7 +604,7 @@
     <hop>
       <from>Dim Evaluado</from>
       <to>error tabla</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Select values 2</from>
@@ -629,6 +614,46 @@
     <hop>
       <from>String operations</from>
       <to>Dim Evaluado</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>If field value is null</from>
+      <to>Find Country Code</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Find Country Code</from>
+      <to>Replace in string</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>paises</from>
+      <to>Fuzzy match</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Fuzzy match</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input</from>
+      <to>Calculator 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Modified JavaScript value</from>
+      <to>Modified JavaScript value 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Modified JavaScript value 2</from>
+      <to>Filter rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Calculator 2 2</from>
+      <to>Fuzzy match</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -668,8 +693,49 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>368</xloc>
-      <yloc>144</yloc>
+      <xloc>496</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Calculator 2 2</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <failIfNoFile>Y</failIfNoFile>
+    <calculation>
+      <field_name>len_cc</field_name>
+      <calc_type>STRING_LEN</calc_type>
+      <field_a>country</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>None</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>96</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -689,8 +755,8 @@
     <table>dim_evaluado</table>
     <commit>1000</commit>
     <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
+    <ignore_errors>Y</ignore_errors>
+    <use_batch>N</use_batch>
     <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
@@ -704,7 +770,7 @@
     <fields>
       <field>
         <column_name>country</column_name>
-        <stream_name>country</stream_name>
+        <stream_name>cc1</stream_name>
       </field>
       <field>
         <column_name>gender</column_name>
@@ -744,8 +810,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>848</xloc>
-      <yloc>48</yloc>
+      <xloc>976</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -788,8 +854,98 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
-      <yloc>144</yloc>
+      <xloc>768</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Find Country Code</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>dm</connection>
+    <cache>Y</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>dim_country</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>country</name>
+        <field>countryCode</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>countryCode</name>
+        <rename>cc1</rename>
+        <default>ND</default>
+        <type>String</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>352</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Fuzzy match</name>
+    <type>FuzzyMatch</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>paises</from>
+    <lookupfield>countryName</lookupfield>
+    <mainstreamfield>country</mainstreamfield>
+    <outputmatchfield>match</outputmatchfield>
+    <outputvaluefield>measure value</outputvaluefield>
+    <caseSensitive>N</caseSensitive>
+    <closervalue>Y</closervalue>
+    <minimalValue>0</minimalValue>
+    <maximalValue>1</maximalValue>
+    <separator>,</separator>
+    <algorithm>jarowinkler</algorithm>
+    <lookup>
+      <value>
+        <name>countryCode</name>
+        <rename>cc2</rename>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -840,8 +996,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>224</xloc>
-      <yloc>144</yloc>
+      <xloc>272</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -958,7 +1114,21 @@ else if (len_year >= 11) {
         } else {include = 'N';}
 
 }
-}</jsScript_script>
+}
+
+
+if (include == 'N')
+{
+include = 'Y';
+anio='01/1/1800'
+}
+
+
+
+
+
+
+</jsScript_script>
       </jsScript>
     </jsScripts>
     <fields>
@@ -1012,8 +1182,55 @@ else if (len_year >= 11) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
-      <yloc>32</yloc>
+      <xloc>608</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Modified JavaScript value 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script here
+
+if (len_cc >2)
+{ cc1=cc2;}</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>cc1</name>
+        <rename>cc1</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>672</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1111,8 +1328,8 @@ else if (len_year >= 11) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>64</yloc>
+      <xloc>432</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1154,6 +1371,15 @@ else if (len_year >= 11) {
       </field>
       <field>
         <name>created_at</name>
+      </field>
+      <field>
+        <name>cc2</name>
+      </field>
+      <field>
+        <name>match</name>
+      </field>
+      <field>
+        <name>len_cc</name>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>
@@ -1309,6 +1535,40 @@ else if (len_year >= 11) {
         <currency_symbol/>
         <storage_type/>
       </meta>
+      <meta>
+        <name>cc2</name>
+        <rename>cc2</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>len_cc</name>
+        <rename>len_cc</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -1319,8 +1579,8 @@ else if (len_year >= 11) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>160</xloc>
-      <yloc>48</yloc>
+      <xloc>208</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1365,6 +1625,9 @@ else if (len_year >= 11) {
       </field>
       <field>
         <name>anio2</name>
+      </field>
+      <field>
+        <name>cc1</name>
       </field>
       <select_unspecified>N</select_unspecified>
       <remove>
@@ -1523,6 +1786,23 @@ else if (len_year >= 11) {
         <currency_symbol/>
         <storage_type/>
       </meta>
+      <meta>
+        <name>cc1</name>
+        <rename>cc1</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -1533,8 +1813,8 @@ else if (len_year >= 11) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>592</xloc>
-      <yloc>48</yloc>
+      <xloc>832</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1599,8 +1879,8 @@ else if (len_year >= 11) {
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
-      <yloc>48</yloc>
+      <xloc>912</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1623,7 +1903,7 @@ studyLevel_id,
 workActivity_id,workSector_id, '' aa , "01/01/" as monthday,
 birthYear, birthYear fechafix ,created_at
 FROM fos_user_user
-WHERE country &lt;&gt; ''
+
 
 </sql>
     <limit>0</limit>
@@ -1640,8 +1920,8 @@ WHERE country &lt;&gt; ''
       </output>
     </remotesteps>
     <GUI>
-      <xloc>112</xloc>
-      <yloc>144</yloc>
+      <xloc>16</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1665,8 +1945,8 @@ WHERE country &lt;&gt; ''
       </output>
     </remotesteps>
     <GUI>
-      <xloc>976</xloc>
-      <yloc>48</yloc>
+      <xloc>1136</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1690,8 +1970,46 @@ WHERE country &lt;&gt; ''
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
-      <yloc>144</yloc>
+      <xloc>832</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>paises</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>dm</connection>
+    <sql>SELECT
+
+ countryCode
+, countryName
+
+FROM dim_country
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1699,7 +2017,7 @@ WHERE country &lt;&gt; ''
     <error>
       <source_step>Dim Evaluado</source_step>
       <target_step>error tabla</target_step>
-      <is_enabled>Y</is_enabled>
+      <is_enabled>N</is_enabled>
       <nr_valuename/>
       <descriptions_valuename/>
       <fields_valuename/>
