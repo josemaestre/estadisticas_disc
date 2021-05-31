@@ -449,7 +449,7 @@
     <index_tablespace/>
     <attributes>
       <attribute>
-        <code>EXTRA_OPTION_MARIADB.useCompression</code>
+        <code>EXTRA_OPTION_MARIADB.useCompression </code>
         <attribute>true</attribute>
       </attribute>
       <attribute>
@@ -457,7 +457,7 @@
         <attribute>true</attribute>
       </attribute>
       <attribute>
-        <code>EXTRA_OPTION_MARIADB.useServerPrepStmts</code>
+        <code>EXTRA_OPTION_MARIADB.useServerPrepStmts </code>
         <attribute>false</attribute>
       </attribute>
       <attribute>
@@ -608,6 +608,12 @@
         <item>61</item>
         <item>200</item>
         <item>7</item>
+      </line>
+      <line>
+        <item>NC</item>
+        <item>201</item>
+        <item>1000</item>
+        <item>8</item>
       </line>
     </data>
     <attributes/>
