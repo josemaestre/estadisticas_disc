@@ -396,7 +396,7 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Aplanar Valores</name>
+      <name>Guardar Valores</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -446,7 +446,7 @@
     </hop>
     <hop>
       <from>Generar  Valores</from>
-      <to>Aplanar Valores</to>
+      <to>Guardar Valores</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

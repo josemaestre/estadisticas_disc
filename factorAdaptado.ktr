@@ -447,7 +447,7 @@
     <type>MARIADB</type>
     <access>Native</access>
     <database>disc</database>
-    <port>3306</port>
+    <port>${DM_HOST_PORT}</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
     <servername/>
@@ -484,7 +484,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>3306</attribute>
+        <attribute>${DM_HOST_PORT}</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -684,24 +684,9 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Calc Princ Factor</from>
-      <to>Write to log</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Write to log</from>
-      <to>Update Factor Adaptado</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Add constants</from>
       <to>Database lookup 2</to>
       <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Gen DISC Factor</from>
-      <to>Select values 3</to>
-      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Select values 3</from>
@@ -724,23 +709,33 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Get Variables</from>
-      <to>Write to log 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Write to log 2</from>
-      <to>Table input</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Get rows from result</from>
       <to>Get Variables</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Update Factor Adaptado</from>
-      <to>Dummy (do nothing)</to>
+      <to>Errores de UPDATE</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Calc Princ Factor</from>
+      <to>Update Factor Adaptado</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Errores de UPDATE</from>
+      <to>Text file output</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get Variables</from>
+      <to>Write to log</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Write to log</from>
+      <to>Table input</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -904,8 +899,8 @@ for(var i=0,len=arreglo .length;i&lt;len;i++){
       </output>
     </remotesteps>
     <GUI>
-      <xloc>480</xloc>
-      <yloc>224</yloc>
+      <xloc>464</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1030,7 +1025,7 @@ for(var i=0,len=arreglo .length;i&lt;len;i++){
     </GUI>
   </step>
   <step>
-    <name>Dummy (do nothing)</name>
+    <name>Errores de UPDATE</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -1049,8 +1044,8 @@ for(var i=0,len=arreglo .length;i&lt;len;i++){
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1360</xloc>
-      <yloc>672</yloc>
+      <xloc>1280</xloc>
+      <yloc>656</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1099,45 +1094,6 @@ for(var i=0,len=arreglo .length;i&lt;len;i++){
     </GUI>
   </step>
   <step>
-    <name>Gen DISC Factor</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>disc</connection>
-    <sql>SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'D' AS letter, ${evaluacion} as id
-UNION ALL
-SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'I' AS letter, ${evaluacion} as id
-UNION ALL 
-SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'S' AS letter, ${evaluacion} as id
-UNION ALL
-SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'C' AS letter, ${evaluacion} as id
-  </sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>752</xloc>
-      <yloc>16</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>Get Variables</name>
     <type>GetVariable</type>
     <description/>
@@ -1150,8 +1106,8 @@ SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'C' AS letter, ${evalu
     </partitioning>
     <fields>
       <field>
-        <name>evaluacion</name>
-        <variable>${evaluacion}</variable>
+        <name>id</name>
+        <variable>${id}</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -1162,8 +1118,8 @@ SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'C' AS letter, ${evalu
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>tabla</name>
-        <variable>${tabla}</variable>
+        <name>table</name>
+        <variable>${table}</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -1207,7 +1163,7 @@ SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'C' AS letter, ${evalu
         <precision>-1</precision>
       </field>
       <field>
-        <name>evaluacion</name>
+        <name>id</name>
         <type>Integer</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1689,7 +1645,7 @@ SELECT '--' AS adapted_answer, '--' respuesta,0 AS point, 'C' AS letter, ${evalu
     <connection>ds_evaluacenter</connection>
     <sql>SELECT  t0.evaluation_id id ,t0.adapted_answer_id
 FROM question_instance t0 
-WHERE t0.evaluation_id = ${evaluacion}
+WHERE t0.evaluation_id = ${id}
 AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 'radarrevaluation', 'discpersonal', 'valores', 'vocacional', 'discjovenes', 'radar', 'discperfilpuesto', 'wellness')
 </sql>
     <limit>0</limit>
@@ -1706,8 +1662,149 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
+      <xloc>400</xloc>
       <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Text file output</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <separator>;</separator>
+    <enclosure>"</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding/>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>C:/tmp/KK.TXT</name>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery/>
+    </file>
+    <fields>
+      <field>
+        <name>id</name>
+        <type>Integer</type>
+        <format>####0;-####0</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>9</length>
+        <precision>0</precision>
+      </field>
+      <field>
+        <name>D</name>
+        <type>Integer</type>
+        <format>####0;-####0</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>0</precision>
+      </field>
+      <field>
+        <name>I</name>
+        <type>Integer</type>
+        <format>####0;-####0</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>0</precision>
+      </field>
+      <field>
+        <name>S</name>
+        <type>Integer</type>
+        <format>####0;-####0</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>0</precision>
+      </field>
+      <field>
+        <name>C</name>
+        <type>Integer</type>
+        <format>####0;-####0</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>0</precision>
+      </field>
+      <field>
+        <name>factor</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>maximo</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>656</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1715,7 +1812,7 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
     <name>Update Factor Adaptado</name>
     <type>Update</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -1725,12 +1822,12 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
     <connection>disc</connection>
     <skip_lookup>N</skip_lookup>
     <commit>100</commit>
-    <use_batch>Y</use_batch>
+    <use_batch>N</use_batch>
     <error_ignored>N</error_ignored>
     <ignore_flag_field/>
     <lookup>
       <schema/>
-      <table>${tabla}</table>
+      <table>${table}</table>
       <key>
         <name>id</name>
         <field>id</field>
@@ -1767,8 +1864,8 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1360</xloc>
-      <yloc>512</yloc>
+      <xloc>1280</xloc>
+      <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1787,46 +1884,13 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
     <displayHeader>Y</displayHeader>
     <limitRows>N</limitRows>
     <limitRowsNumber>0</limitRowsNumber>
-    <logmessage>RESULTADO</logmessage>
-    <fields>
-      </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1360</xloc>
-      <yloc>208</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Write to log 2</name>
-    <type>WriteToLog</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <loglevel>log_level_detailed</loglevel>
-    <displayHeader>Y</displayHeader>
-    <limitRows>N</limitRows>
-    <limitRowsNumber>0</limitRowsNumber>
-    <logmessage>-------------Actualizando la Tabla: ${tabla}
-</logmessage>
+    <logmessage>-------------------------------------</logmessage>
     <fields>
       <field>
-        <name>tabla</name>
+        <name>table</name>
       </field>
       <field>
-        <name>evaluacion</name>
+        <name>id</name>
       </field>
     </fields>
     <attributes/>
@@ -1839,14 +1903,14 @@ AND t0.type IN ('questionInstance', 'disc', 'disccomercial', 'discprofesional', 
     </remotesteps>
     <GUI>
       <xloc>304</xloc>
-      <yloc>224</yloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step_error_handling>
     <error>
       <source_step>Update Factor Adaptado</source_step>
-      <target_step>Dummy (do nothing)</target_step>
+      <target_step>Errores de UPDATE</target_step>
       <is_enabled>Y</is_enabled>
       <nr_valuename/>
       <descriptions_valuename/>

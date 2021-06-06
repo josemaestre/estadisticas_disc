@@ -437,12 +437,12 @@
   <notepads>
   </notepads>
   <connection>
-    <name>ds_evaluacenter</name>
-    <server>${SC_HOST}</server>
+    <name>dm_stegin</name>
+    <server>${DM_HOST}</server>
     <type>MARIADB</type>
     <access>Native</access>
-    <database>${SC_HOST_DB_NAME}</database>
-    <port>3306</port>
+    <database>dm_stg</database>
+    <port>${DM_HOST_PORT}</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
     <servername/>
@@ -458,7 +458,7 @@
         <attribute>true</attribute>
       </attribute>
       <attribute>
-        <code>EXTRA_OPTION_MARIADB.useServerPrepStmts </code>
+        <code>EXTRA_OPTION_MARIADB.useServerPrepStmts</code>
         <attribute>false</attribute>
       </attribute>
       <attribute>
@@ -479,7 +479,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>3306</attribute>
+        <attribute>${DM_HOST_PORT}</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -546,12 +546,12 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ds_evaluacenter</connection>
+    <connection>dm_stegin</connection>
     <sql>
-SELECT evaluation_id as id
+SELECT evaluation_id AS id
 FROM  question_instance q
-WHERE first_answer_id is not null
-</sql>
+WHERE first_answer_id IS NOT NULL AND evaluation_id NOT IN (SELECT evaluation_id FROM valores_cargados)
+ORDER BY evaluation_id</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -566,7 +566,7 @@ WHERE first_answer_id is not null
       </output>
     </remotesteps>
     <GUI>
-      <xloc>240</xloc>
+      <xloc>224</xloc>
       <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>

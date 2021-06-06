@@ -637,7 +637,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Table input</from>
+      <from>Input fos_user_user</from>
       <to>Calculator 2 2</to>
       <enabled>Y</enabled>
     </hop>
@@ -657,6 +657,47 @@
       <enabled>Y</enabled>
     </hop>
   </order>
+  <step>
+    <name>Input fos_user_user</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>ds_evaluacenter</connection>
+    <sql>SELECT id AS user_id,
+gender,state,
+country,
+studyLevel_id,
+workActivity_id,workSector_id, '' aa , "01/01/" as monthday,
+birthYear, birthYear fechafix ,created_at
+FROM fos_user_user
+where state=2
+
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Calculator 2</name>
     <type>Calculator</type>
@@ -693,8 +734,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>176</yloc>
+      <xloc>592</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -734,8 +775,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>96</xloc>
-      <yloc>176</yloc>
+      <xloc>176</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -810,8 +851,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>976</xloc>
-      <yloc>176</yloc>
+      <xloc>1072</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -854,8 +895,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
-      <yloc>320</yloc>
+      <xloc>864</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -902,8 +943,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
-      <yloc>176</yloc>
+      <xloc>448</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -944,8 +985,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>144</xloc>
-      <yloc>320</yloc>
+      <xloc>240</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -996,8 +1037,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
-      <yloc>320</yloc>
+      <xloc>368</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1182,8 +1223,8 @@ anio='01/1/1800'
       </output>
     </remotesteps>
     <GUI>
-      <xloc>608</xloc>
-      <yloc>320</yloc>
+      <xloc>704</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1229,8 +1270,8 @@ if (len_cc >2)
       </output>
     </remotesteps>
     <GUI>
-      <xloc>672</xloc>
-      <yloc>192</yloc>
+      <xloc>768</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1328,8 +1369,8 @@ if (len_cc >2)
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
-      <yloc>320</yloc>
+      <xloc>528</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1579,8 +1620,8 @@ if (len_cc >2)
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
-      <yloc>176</yloc>
+      <xloc>304</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1813,8 +1854,8 @@ if (len_cc >2)
       </output>
     </remotesteps>
     <GUI>
-      <xloc>832</xloc>
-      <yloc>176</yloc>
+      <xloc>928</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1879,49 +1920,8 @@ if (len_cc >2)
       </output>
     </remotesteps>
     <GUI>
-      <xloc>912</xloc>
-      <yloc>320</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Table input</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>ds_evaluacenter</connection>
-    <sql>SELECT id AS user_id,
-gender,state,
-country,
-studyLevel_id,
-workActivity_id,workSector_id, '' aa , "01/01/" as monthday,
-birthYear, birthYear fechafix ,created_at
-FROM fos_user_user
-
-
-</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>16</xloc>
-      <yloc>304</yloc>
+      <xloc>1008</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1945,8 +1945,8 @@ FROM fos_user_user
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1136</xloc>
-      <yloc>176</yloc>
+      <xloc>1232</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1970,8 +1970,8 @@ FROM fos_user_user
       </output>
     </remotesteps>
     <GUI>
-      <xloc>832</xloc>
-      <yloc>64</yloc>
+      <xloc>928</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2008,8 +2008,8 @@ FROM dim_country
       </output>
     </remotesteps>
     <GUI>
-      <xloc>144</xloc>
-      <yloc>464</yloc>
+      <xloc>240</xloc>
+      <yloc>480</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
