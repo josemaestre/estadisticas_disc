@@ -442,7 +442,7 @@
     <type>MARIADB</type>
     <access>Native</access>
     <database>disc</database>
-    <port>3306</port>
+    <port>${DM_HOST_PORT}</port>
     <username>${USERDB}</username>
     <password>${PASSDB}</password>
     <servername/>
@@ -479,7 +479,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>3306</attribute>
+        <attribute>${DM_HOST_PORT}</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -1080,7 +1080,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </remotesteps>
     <GUI>
       <xloc>288</xloc>
-      <yloc>352</yloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1743,7 +1743,7 @@ SQL = SQL + sqlString;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>160</xloc>
+      <xloc>112</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2254,8 +2254,8 @@ WHERE TYPE ='discjovenes'
       </output>
     </remotesteps>
     <GUI>
-      <xloc>160</xloc>
-      <yloc>80</yloc>
+      <xloc>112</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

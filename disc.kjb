@@ -766,7 +766,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Disc</name>
+      <name>Disc Empresarial</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
@@ -859,7 +859,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>928</xloc>
+      <xloc>912</xloc>
       <yloc>352</yloc>
       <attributes_kjc/>
     </entry>
@@ -992,7 +992,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>2</nr>
-      <xloc>1120</xloc>
+      <xloc>1136</xloc>
       <yloc>352</yloc>
       <attributes_kjc/>
     </entry>
@@ -1105,7 +1105,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1424</xloc>
+      <xloc>1408</xloc>
       <yloc>352</yloc>
       <attributes_kjc/>
     </entry>
@@ -1346,7 +1346,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
     </hop>
     <hop>
       <from>Evaluado >0</from>
-      <to>Disc</to>
+      <to>Disc Empresarial</to>
       <from_nr>0</from_nr>
       <to_nr>1</to_nr>
       <enabled>Y</enabled>
@@ -1435,7 +1435,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Disc</from>
+      <from>Disc Empresarial</from>
       <to>Abort job</to>
       <from_nr>1</from_nr>
       <to_nr>0</to_nr>
@@ -1444,7 +1444,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Disc</from>
+      <from>Disc Empresarial</from>
       <to>Disc jovenes</to>
       <from_nr>1</from_nr>
       <to_nr>2</to_nr>
