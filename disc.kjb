@@ -1286,7 +1286,14 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <include_date>N</include_date>
       <contact_person/>
       <contact_phone/>
-      <comment>No se ha podido conectar a alguna BD</comment>
+      <comment>No se ha podido conectar a alguna BD
+
+SC_HOST_DB_NAME=${SC_HOST_DB_NAME}
+KETTLE_HOME=${KETTLE_HOME}
+USERDB=${USERDB}
+DM_HOST=${DM_HOST}
+PASSDB=${PASSDB}
+SC_HOST=${SC_HOST}</comment>
       <include_files>N</include_files>
       <zip_files>N</zip_files>
       <zip_name/>
@@ -1627,15 +1634,6 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Start</from>
-      <to>Check DB</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>Valores</from>
       <to>Disc Para Calc</to>
       <from_nr>0</from_nr>
@@ -1660,7 +1658,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
+      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>Procesados a stegin</from>
@@ -1742,6 +1740,15 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Start</from>
+      <to>Check DB</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
