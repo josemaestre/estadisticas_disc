@@ -19,13 +19,13 @@
   </parameters>
   <connection>
     <name>disc</name>
-    <server>${DM_HOST}</server>
+    <server>localhost</server>
     <type>MARIADB</type>
     <access>Native</access>
     <database>disc</database>
-    <port>${DM_HOST_PORT}</port>
-    <username>${USERDB}</username>
-    <password>${PASSDB}</password>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted </password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -60,7 +60,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>${DM_HOST_PORT}</attribute>
+        <attribute>3306</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -86,13 +86,13 @@
   </connection>
   <connection>
     <name>dm</name>
-    <server>${DM_HOST}</server>
+    <server>localhost</server>
     <type>MARIADB</type>
     <access>Native</access>
     <database>dm</database>
-    <port>${DM_HOST_PORT}</port>
-    <username>${USERDB}</username>
-    <password>${PASSDB}</password>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted </password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -127,7 +127,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>${DM_HOST_PORT}</attribute>
+        <attribute>3306</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -762,7 +762,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1648</xloc>
-      <yloc>160</yloc>
+      <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -895,7 +895,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>720</xloc>
-      <yloc>48</yloc>
+      <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -1152,7 +1152,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>192</xloc>
+      <xloc>368</xloc>
       <yloc>144</yloc>
       <attributes_kjc/>
     </entry>
@@ -1239,7 +1239,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/procesados a stegin.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/procesados_a_stegin.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -1268,6 +1268,135 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <nr>0</nr>
       <xloc>48</xloc>
       <yloc>256</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Error de conexion - Mail</name>
+      <description/>
+      <type>MAIL</type>
+      <attributes/>
+      <server>smtp-mail.outlook.com</server>
+      <port>587</port>
+      <destination>josemaestre@gmail.com</destination>
+      <destinationCc/>
+      <destinationBCc/>
+      <replyto>josegregoriomaestre@hotmail.com</replyto>
+      <replytoname>BI Process</replytoname>
+      <subject>Error de Conexion con servidores</subject>
+      <include_date>N</include_date>
+      <contact_person/>
+      <contact_phone/>
+      <comment>No se ha podido conectar a alguna BD</comment>
+      <include_files>N</include_files>
+      <zip_files>N</zip_files>
+      <zip_name/>
+      <use_auth>Y</use_auth>
+      <use_secure_auth>Y</use_secure_auth>
+      <auth_user>josegregoriomaestre@hotmail.com</auth_user>
+      <auth_password>Encrypted 2be98afc86aa7bf85ae0aba62dbb2ff8b</auth_password>
+      <only_comment>N</only_comment>
+      <use_HTML>N</use_HTML>
+      <use_Priority>N</use_Priority>
+      <encoding>UTF-8</encoding>
+      <priority>normal</priority>
+      <importance>normal</importance>
+      <sensitivity>normal</sensitivity>
+      <secureconnectiontype>TLS</secureconnectiontype>
+      <replyToAddresses/>
+      <filetypes>      </filetypes>
+      <embeddedimages>
+      </embeddedimages>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>176</xloc>
+      <yloc>144</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Error de Proceso - Email</name>
+      <description/>
+      <type>MAIL</type>
+      <attributes/>
+      <server>smtp-mail.outlook.com</server>
+      <port>587</port>
+      <destination>josemaestre@gmail.com</destination>
+      <destinationCc/>
+      <destinationBCc/>
+      <replyto>josegregoriomaestre@hotmail.com</replyto>
+      <replytoname>BI Process</replytoname>
+      <subject>Error en el proceso</subject>
+      <include_date>N</include_date>
+      <contact_person/>
+      <contact_phone/>
+      <comment>Hubo un error en el proceso</comment>
+      <include_files>N</include_files>
+      <zip_files>N</zip_files>
+      <zip_name/>
+      <use_auth>Y</use_auth>
+      <use_secure_auth>Y</use_secure_auth>
+      <auth_user>josegregoriomaestre@hotmail.com</auth_user>
+      <auth_password>Encrypted 2be98afc86aa7bf85ae0aba62dbb2ff8b</auth_password>
+      <only_comment>N</only_comment>
+      <use_HTML>N</use_HTML>
+      <use_Priority>N</use_Priority>
+      <encoding>UTF-8</encoding>
+      <priority>normal</priority>
+      <importance>normal</importance>
+      <sensitivity>normal</sensitivity>
+      <secureconnectiontype>TLS</secureconnectiontype>
+      <replyToAddresses/>
+      <filetypes>      </filetypes>
+      <embeddedimages>
+      </embeddedimages>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>1</nr>
+      <xloc>720</xloc>
+      <yloc>0</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Envio exito - Mail</name>
+      <description/>
+      <type>MAIL</type>
+      <attributes/>
+      <server>smtp-mail.outlook.com</server>
+      <port>587</port>
+      <destination>josemaestre@gmail.com</destination>
+      <destinationCc/>
+      <destinationBCc/>
+      <replyto>josegregoriomaestre@hotmail.com</replyto>
+      <replytoname>BI Process</replytoname>
+      <subject>Corrida exitosa</subject>
+      <include_date>N</include_date>
+      <contact_person/>
+      <contact_phone/>
+      <comment>Los datos ya fueron cargados en el Dashboard</comment>
+      <include_files>N</include_files>
+      <zip_files>N</zip_files>
+      <zip_name/>
+      <use_auth>Y</use_auth>
+      <use_secure_auth>Y</use_secure_auth>
+      <auth_user>josegregoriomaestre@hotmail.com</auth_user>
+      <auth_password>Encrypted 2be98afc86aa7bf85ae0aba62dbb2ff8b</auth_password>
+      <only_comment>N</only_comment>
+      <use_HTML>N</use_HTML>
+      <use_Priority>N</use_Priority>
+      <encoding>UTF-8</encoding>
+      <priority>normal</priority>
+      <importance>normal</importance>
+      <sensitivity>normal</sensitivity>
+      <secureconnectiontype>TLS</secureconnectiontype>
+      <replyToAddresses/>
+      <filetypes>      </filetypes>
+      <embeddedimages>
+      </embeddedimages>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>2</nr>
+      <xloc>1648</xloc>
+      <yloc>192</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
@@ -1507,15 +1636,6 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Check DB</from>
-      <to>ERROR DE CONEXION DB</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Valores</from>
       <to>Disc Para Calc</to>
       <from_nr>0</from_nr>
@@ -1552,12 +1672,75 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Disc Perso Para Calc</from>
-      <to>Success</to>
-      <from_nr>1</from_nr>
+      <from>Check DB</from>
+      <to>Error de conexion - Mail</to>
+      <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Error de conexion - Mail</from>
+      <to>ERROR DE CONEXION DB</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Abort job</from>
+      <to>Error de Proceso - Email</to>
+      <from_nr>0</from_nr>
+      <to_nr>1</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Disc Perso Para Calc</from>
+      <to>Envio exito - Mail</to>
+      <from_nr>1</from_nr>
+      <to_nr>2</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Envio exito - Mail</from>
+      <to>Success</to>
+      <from_nr>2</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Disc Para Calc</from>
+      <to>Abort job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Valores</from>
+      <to>Abort job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Disc Perso Para Calc</from>
+      <to>Abort job</to>
+      <from_nr>1</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
   </hops>
