@@ -1152,8 +1152,8 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
-      <yloc>64</yloc>
+      <xloc>560</xloc>
+      <yloc>32</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -1317,8 +1317,8 @@ SC_HOST=${SC_HOST}</comment>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>176</xloc>
-      <yloc>144</yloc>
+      <xloc>272</xloc>
+      <yloc>112</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -1428,8 +1428,8 @@ SC_HOST=${SC_HOST}</content>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>288</xloc>
-      <yloc>144</yloc>
+      <xloc>400</xloc>
+      <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -1446,13 +1446,13 @@ USERDB=${USERDB}
 DM_HOST=${DM_HOST}
 PASSDB=${PASSDB}
 SC_HOST=${SC_HOST}</logmessage>
-      <loglevel>Error</loglevel>
+      <loglevel>Debug</loglevel>
       <logsubject>Error de corrida</logsubject>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>352</xloc>
-      <yloc>96</yloc>
+      <xloc>144</xloc>
+      <yloc>128</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
@@ -1719,15 +1719,6 @@ SC_HOST=${SC_HOST}</logmessage>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Check DB</from>
-      <to>Error de conexion - Mail</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>Abort job</from>
       <to>Error de Proceso - Email</to>
       <from_nr>0</from_nr>
@@ -1801,6 +1792,15 @@ SC_HOST=${SC_HOST}</logmessage>
     </hop>
     <hop>
       <from>Write to file</from>
+      <to>ERROR DE CONEXION DB</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Check DB</from>
       <to>Write to log</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1810,7 +1810,7 @@ SC_HOST=${SC_HOST}</logmessage>
     </hop>
     <hop>
       <from>Write to log</from>
-      <to>ERROR DE CONEXION DB</to>
+      <to>Error de conexion - Mail</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
