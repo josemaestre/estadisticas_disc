@@ -1412,7 +1412,7 @@ SC_HOST=${SC_HOST}</comment>
       <description/>
       <type>WRITE_TO_FILE</type>
       <attributes/>
-      <filename>error</filename>
+      <filename>RESULTADO.TXT</filename>
       <createParentFolder>N</createParentFolder>
       <appendFile>N</appendFile>
       <content>No se ha podido conectar a alguna BD
@@ -1430,6 +1430,29 @@ SC_HOST=${SC_HOST}</content>
       <nr>0</nr>
       <xloc>288</xloc>
       <yloc>144</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Write to log</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <attributes/>
+      <logmessage>No se ha podido conectar a alguna BD
+------- variables ------
+
+SC_HOST_DB_NAME=${SC_HOST_DB_NAME}
+KETTLE_HOME=${KETTLE_HOME}
+USERDB=${USERDB}
+DM_HOST=${DM_HOST}
+PASSDB=${PASSDB}
+SC_HOST=${SC_HOST}</logmessage>
+      <loglevel>Error</loglevel>
+      <logsubject>Error de corrida</logsubject>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>352</xloc>
+      <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
@@ -1778,12 +1801,21 @@ SC_HOST=${SC_HOST}</content>
     </hop>
     <hop>
       <from>Write to file</from>
-      <to>ERROR DE CONEXION DB</to>
+      <to>Write to log</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Write to log</from>
+      <to>ERROR DE CONEXION DB</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>
