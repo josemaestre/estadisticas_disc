@@ -1287,6 +1287,7 @@ SET FOREIGN_KEY_CHECKS = 1; </sql>
       <contact_person/>
       <contact_phone/>
       <comment>No se ha podido conectar a alguna BD
+------- variables ------
 
 SC_HOST_DB_NAME=${SC_HOST_DB_NAME}
 KETTLE_HOME=${KETTLE_HOME}
