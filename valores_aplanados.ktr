@@ -438,13 +438,84 @@
   </notepads>
   <connection>
     <name>disc</name>
-    <server>${DM_HOST}</server>
+    <server>localhost</server>
     <type>MARIADB</type>
     <access>Native</access>
     <database>disc</database>
     <port>3306</port>
-    <username>${USERDB}</username>
-    <password>${PASSDB}</password>
+    <username>root</username>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>EXTRA_OPTION_MARIADB.useCompression </code>
+        <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MARIADB.useCursorFetch </code>
+        <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MARIADB.useServerPrepStmts </code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MARIADB.wait_timeout</code>
+        <attribute>57600</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MARIADB.zeroDateTimeBehavior</code>
+        <attribute>convertToNull</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>3306</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>dm</name>
+    <server>localhost</server>
+    <type>MARIADB</type>
+    <access>Native</access>
+    <database>dm</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted </password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -504,73 +575,6 @@
     </attributes>
   </connection>
   <connection>
-    <name>dm</name>
-    <server>${DM_HOST}</server>
-    <type>MARIADB</type>
-    <access>Native</access>
-    <database>dm</database>
-    <port>${DM_HOST_PORT}</port>
-    <username>${USERDB}</username>
-    <password>${PASSDB}</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute>
-        <code>EXTRA_OPTION_MARIADB.useCompression </code>
-        <attribute>true</attribute>
-      </attribute>
-      <attribute>
-        <code>EXTRA_OPTION_MARIADB.useCursorFetch </code>
-        <attribute>true</attribute>
-      </attribute>
-      <attribute>
-        <code>EXTRA_OPTION_MARIADB.useServerPrepStmts </code>
-        <attribute>false</attribute>
-      </attribute>
-      <attribute>
-        <code>EXTRA_OPTION_MARIADB.zeroDateTimeBehavior</code>
-        <attribute>convertToNull</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>${DM_HOST_PORT}</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
-    </attributes>
-  </connection>
-  <connection>
     <name>dm_stegin</name>
     <server>${DM_HOST}</server>
     <type>MARIADB</type>
@@ -594,6 +598,10 @@
       <attribute>
         <code>EXTRA_OPTION_MARIADB.useServerPrepStmts</code>
         <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MARIADB.wait_timeout</code>
+        <attribute>57600</attribute>
       </attribute>
       <attribute>
         <code>EXTRA_OPTION_MARIADB.zeroDateTimeBehavior</code>
@@ -661,6 +669,10 @@
       <attribute>
         <code>EXTRA_OPTION_MARIADB.useServerPrepStmts </code>
         <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MARIADB.wait_timeout</code>
+        <attribute>57600</attribute>
       </attribute>
       <attribute>
         <code>EXTRA_OPTION_MARIADB.zeroDateTimeBehavior</code>
@@ -818,7 +830,7 @@
       <schema_name/>
     </partitioning>
     <connection>dm</connection>
-    <cache>N</cache>
+    <cache>Y</cache>
     <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
@@ -1169,7 +1181,7 @@ SQL = SQL + sqlString;</jsScript_script>
       <schema_name/>
     </partitioning>
     <connection>ds_evaluacenter</connection>
-    <cache>N</cache>
+    <cache>Y</cache>
     <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>

@@ -438,13 +438,13 @@
   </notepads>
   <connection>
     <name>disc</name>
-    <server>${DM_HOST}</server>
+    <server>localhost</server>
     <type>MARIADB</type>
     <access>Native</access>
     <database>disc</database>
-    <port>${DM_HOST_PORT}</port>
-    <username>${USERDB}</username>
-    <password>${PASSDB}</password>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted </password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -460,6 +460,10 @@
       <attribute>
         <code>EXTRA_OPTION_MARIADB.useServerPrepStmts </code>
         <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MARIADB.wait_timeout</code>
+        <attribute>57600</attribute>
       </attribute>
       <attribute>
         <code>EXTRA_OPTION_MARIADB.zeroDateTimeBehavior</code>
@@ -479,7 +483,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>${DM_HOST_PORT}</attribute>
+        <attribute>3306</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -505,13 +509,13 @@
   </connection>
   <connection>
     <name>dm</name>
-    <server>${DM_HOST}</server>
+    <server>localhost</server>
     <type>MARIADB</type>
     <access>Native</access>
     <database>dm</database>
-    <port>${DM_HOST_PORT}</port>
-    <username>${USERDB}</username>
-    <password>${PASSDB}</password>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted </password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -546,7 +550,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>${DM_HOST_PORT}</attribute>
+        <attribute>3306</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -594,6 +598,10 @@
       <attribute>
         <code>EXTRA_OPTION_MARIADB.useServerPrepStmts </code>
         <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MARIADB.wait_timeout</code>
+        <attribute>57600</attribute>
       </attribute>
       <attribute>
         <code>EXTRA_OPTION_MARIADB.zeroDateTimeBehavior</code>
@@ -1097,7 +1105,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1163,7 +1171,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1235,7 +1243,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1301,7 +1309,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1361,7 +1369,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1421,7 +1429,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1505,7 +1513,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>

@@ -43,6 +43,10 @@
         <attribute>false</attribute>
       </attribute>
       <attribute>
+        <code>EXTRA_OPTION_MARIADB.wait_timeout</code>
+        <attribute>57600</attribute>
+      </attribute>
+      <attribute>
         <code>EXTRA_OPTION_MARIADB.zeroDateTimeBehavior</code>
         <attribute>convertToNull</attribute>
       </attribute>
@@ -177,6 +181,10 @@
         <attribute>false</attribute>
       </attribute>
       <attribute>
+        <code>EXTRA_OPTION_MARIADB.wait_timeout</code>
+        <attribute>57600</attribute>
+      </attribute>
+      <attribute>
         <code>EXTRA_OPTION_MARIADB.zeroDateTimeBehavior</code>
         <attribute>convertToNull</attribute>
       </attribute>
@@ -242,6 +250,10 @@
       <attribute>
         <code>EXTRA_OPTION_MARIADB.useServerPrepStmts </code>
         <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MARIADB.wait_timeout</code>
+        <attribute>57600</attribute>
       </attribute>
       <attribute>
         <code>EXTRA_OPTION_MARIADB.zeroDateTimeBehavior</code>
@@ -739,7 +751,7 @@ truncate table dim_study_level;
 
 truncate table dim_account;
 truncate table dim_disc;
-
+SET GLOBAL wait_timeout = 60000;
 SET FOREIGN_KEY_CHECKS = 1; </sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>

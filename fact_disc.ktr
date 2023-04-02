@@ -438,13 +438,13 @@
   </notepads>
   <connection>
     <name>disc</name>
-    <server>${DM_HOST}</server>
+    <server>localhost</server>
     <type>MARIADB</type>
     <access>Native</access>
     <database>disc</database>
-    <port>${DM_HOST_PORT}</port>
-    <username>${USERDB}</username>
-    <password>${PASSDB}</password>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted </password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -460,6 +460,10 @@
       <attribute>
         <code>EXTRA_OPTION_MARIADB.useServerPrepStmts </code>
         <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MARIADB.wait_timeout</code>
+        <attribute>57600</attribute>
       </attribute>
       <attribute>
         <code>EXTRA_OPTION_MARIADB.zeroDateTimeBehavior</code>
@@ -479,7 +483,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>${DM_HOST_PORT}</attribute>
+        <attribute>3306</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -505,13 +509,13 @@
   </connection>
   <connection>
     <name>dm</name>
-    <server>${DM_HOST}</server>
+    <server>localhost</server>
     <type>MARIADB</type>
     <access>Native</access>
     <database>dm</database>
-    <port>${DM_HOST_PORT}</port>
-    <username>${USERDB}</username>
-    <password>${PASSDB}</password>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted </password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -546,7 +550,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>${DM_HOST_PORT}</attribute>
+        <attribute>3306</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -594,6 +598,10 @@
       <attribute>
         <code>EXTRA_OPTION_MARIADB.useServerPrepStmts </code>
         <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MARIADB.wait_timeout</code>
+        <attribute>57600</attribute>
       </attribute>
       <attribute>
         <code>EXTRA_OPTION_MARIADB.zeroDateTimeBehavior</code>
@@ -756,11 +764,6 @@
     <hop>
       <from>Find evsl</from>
       <to>Dummy (do nothing)</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Disc</from>
-      <to>Dummy (do nothing) 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -962,7 +965,7 @@ SQL = SQL + sqlString;</jsScript_script>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>Y</ignore_errors>
-    <use_batch>Y</use_batch>
+    <use_batch>N</use_batch>
     <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
@@ -1111,31 +1114,6 @@ SQL = SQL + sqlString;</jsScript_script>
     </GUI>
   </step>
   <step>
-    <name>Dummy (do nothing) 2</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>816</xloc>
-      <yloc>544</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>Fact Disc</name>
     <type>TableOutput</type>
     <description/>
@@ -1248,7 +1226,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1314,7 +1292,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1386,7 +1364,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1452,7 +1430,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1512,7 +1490,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1572,7 +1550,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -1656,7 +1634,7 @@ SQL = SQL + sqlString;</jsScript_script>
     </partitioning>
     <connection>dm</connection>
     <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
+    <cache_load_all>Y</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
       <schema>dm</schema>
@@ -2484,7 +2462,7 @@ if (gender == "m") {
   <step_error_handling>
     <error>
       <source_step>Disc</source_step>
-      <target_step>Dummy (do nothing) 2</target_step>
+      <target_step>Grabar a disco</target_step>
       <is_enabled>Y</is_enabled>
       <nr_valuename/>
       <descriptions_valuename/>
